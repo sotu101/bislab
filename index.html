@@ -1,758 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>BISLAB Medical Diagnostics Center | Abeokuta Premier Lab</title>
-  <!-- Google Fonts & Font Awesome 6 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BusinessUp Nigeria — Start, Register & Grow Your Business in Nigeria</title>
+<meta name="description" content="BusinessUp Nigeria is your one-stop destination for CAC, NAFDAC, SMEDAN, Trademark, Website Design, Tax & Compliance. From Business Idea to Business Success.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#008751;
+  --accent:#00B368;
+  --dark:#0F2419;
+  --white:#FFFFFF;
+  --light:#F5FDF8;
+  --gray-50:#f8fafc;
+  --gray-100:#f1f5f9;
+  --gray-200:#e2e8f0;
+  --gray-600:#475569;
+  --gray-800:#1e293b;
+  --shadow-sm:0 4px 12px rgba(0,135,81,.06);
+  --shadow-md:0 10px 30px rgba(0,135,81,.08);
+  --shadow-lg:0 20px 50px rgba(0,135,81,.12);
+  --radius:16px;
+  --radius-sm:12px;
+  --max:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--dark);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Poppins',Inter,sans-serif;letter-spacing:-.02em;line-height:1.15}
+h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700}
+h2{font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:600}
+p{color:var(--gray-600)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;
+  transition:.3s ease;cursor:pointer;border:2px solid transparent;white-space:nowrap
+}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--accent));color:white;box-shadow:0 8px 20px rgba(0,135,81,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,135,81,.3)}
+.btn-outline{background:transparent;border-color:var(--primary);color:var(--primary)}
+.btn-outline:hover{background:var(--light);transform:translateY(-2px)}
+.btn-white{background:white;color:var(--primary);font-weight:700}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.1)}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:var(--light);
+  border:1px solid rgba(0,135,81,.15);border-radius:999px;color:var(--primary);
+  font-size:13px;font-weight:600;margin-bottom:20px
+}
+.badge-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
 
-    :root {
-      --primary: #0B5ED7;
-      --primary-dark: #094c9e;
-      --accent: #20C997;
-      --dark: #0A1C2F;
-      --gray: #4A627A;
-      --light-bg: #F4F9FE;
-      --white: #FFFFFF;
-      --border: rgba(10, 28, 47, 0.08);
-      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
-      --radius: 24px;
-    }
+/* Header */
+.header{
+  position:sticky;top:0;z-index:100;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid transparent;transition:.3s
+}
+.header.scrolled{border-color:var(--gray-100);box-shadow:var(--shadow-sm)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--dark)}
+.logo-mark{
+  width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));
+  display:grid;place-items:center;color:white;font-family:Poppins;font-weight:700
+}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-size:14.5px;font-weight:500;color:var(--gray-600);transition:.2s}
+.nav a:hover{color:var(--primary)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-toggle svg{width:24px;height:24px}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--light-bg);
-      color: var(--dark);
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
+/* Hero */
+.hero{position:relative;padding:110px 0 80px;overflow:hidden;background:linear-gradient(180deg,#fafffc 0%,#ffffff 60%)}
+.hero-bg{position:absolute;inset:0;pointer-events:none;opacity:.6;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23008751' stroke-opacity='0.07' stroke-width='1.5'%3E%3Cpath d='M120 80 L180 65 L240 75 L285 115 L310 175 L280 235 L225 275 L165 265 L110 225 L85 165 L95 110 Z'/%3E%3Cpath d='M80 200 Q150 180 220 200 T320 210'/%3E%3C/g%3E%3C/svg%3E");
+background-size:380px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero h1 span{color:var(--primary);background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.lead{font-size:18px;margin:20px 0 32px;max-width:580px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.trust-row{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:40px;padding-top:24px;border-top:1px solid var(--gray-100)}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--dark)}
+.trust-item svg{color:var(--primary)}
+.hero-card{
+  background:white;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-lg);
+  border:1px solid var(--gray-100);position:relative
+}
+.hero-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.status{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--accent);background:#e6f7ef;padding:6px 10px;border-radius:999px}
+.progress-list{display:grid;gap:14px}
+.progress{display:flex;align-items:center;gap:12px}
+.progress-icon{width:36px;height:36px;border-radius:10px;background:var(--light);display:grid;place-items:center;color:var(--primary)}
+.progress-text{flex:1}
+.progress-text b{display:block;font-size:14px}
+.progress-text span{font-size:12px;color:var(--gray-600)}
 
-    .container {
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+/* Sections */
+section{padding:88px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 56px}
+.section-head p{margin-top:12px;font-size:17px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
 
-    /* HEADER - Mobile First */
-    header {
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border);
-    }
+/* Trust stats */
+.stats{background:var(--gray-50);border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat-card{
+  background:white;padding:28px 24px;border-radius:var(--radius-sm);border:1px solid var(--gray-100);
+  text-align:center;transition:.3s;box-shadow:var(--shadow-sm)
+}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.stat-icon{width:44px;height:44px;margin:0 auto 12px;border-radius:12px;background:linear-gradient(135deg,var(--light),#e8f9f0);display:grid;place-items:center;color:var(--primary)}
+.stat-num{font-size:32px;font-weight:700;font-family:Poppins;color:var(--dark)}
+.stat-label{font-size:14px;color:var(--gray-600);margin-top:4px}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px;margin-top:48px;opacity:.7}
+.logo-pill{padding:10px 18px;border:1px dashed var(--gray-200);border-radius:999px;font-weight:600;font-size:14px;color:var(--gray-600);background:white}
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+/* Services */
+.services-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;background:var(--gray-100);padding:6px;border-radius:999px;width:fit-content;margin-inline:auto}
+.tab-btn{padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;color:var(--gray-600);background:transparent;border:none;cursor:pointer;transition:.25s}
+.tab-btn.active{background:white;color:var(--primary);box-shadow:var(--shadow-sm)}
+.tab-panel{display:none;animation:fade .4s ease}
+.tab-panel.active{display:block}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.service-card{
+  background:white;border:1px solid var(--gray-100);border-radius:14px;padding:18px 18px;
+  display:flex;gap:14px;align-items:flex-start;transition:.3s;cursor:pointer
+}
+.service-card:hover{border-color:rgba(0,135,81,.3);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.s-icon{width:40px;height:40px;flex-shrink:0;border-radius:10px;background:var(--light);display:grid;place-items:center;color:var(--primary)}
+.service-card h4{font-size:15px;font-weight:600;margin-bottom:4px}
+.service-card .learn{font-size:12.5px;color:var(--primary);font-weight:600;opacity:0;transition:.2s}
+.service-card:hover .learn{opacity:1}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+/* Why */
+.why{background:linear-gradient(180deg,white,var(--light))}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why-card{background:white;border:1px solid var(--gray-100);border-radius:var(--radius);padding:28px;transition:.3s}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.why-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;color:white;margin-bottom:16px}
+.why-card h3{margin-bottom:8px;font-size:18px}
+.why-card p{font-size:14.5px}
 
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 800;
-      font-size: 20px;
-      box-shadow: 0 8px 14px rgba(11, 94, 215, 0.25);
-    }
+/* How */
+.how-steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px}
+.how-steps::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));opacity:.2;z-index:0}
+.step{position:relative;text-align:center;padding-top:12px}
+.step-num{width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:white;border:2px solid var(--primary);display:grid;place-items:center;font-weight:700;color:var(--primary);font-family:Poppins;box-shadow:0 0 0 8px var(--light);position:relative;z-index:1}
+.step h4{margin-bottom:6px}
+.step p{font-size:14px}
 
-    .logo-text h1 {
-      font-size: 1.2rem;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-      color: #0A2B44;
-    }
-    .logo-text span {
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--gray);
-      display: block;
-    }
+/* Testimonials */
+.testimonials{background:var(--dark);color:white;position:relative;overflow:hidden}
+.testimonials::before{content:'';position:absolute;inset:0;background:radial-gradient(600px at 20% -10%, rgba(0,179,104,.3), transparent 60%)}
+.testimonials .section-head h2,.testimonials .section-head p{color:white}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.testi-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:28px;border-radius:var(--radius);transition:.3s}
+.testi-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.09)}
+.stars{color:#FFC107;display:flex;gap:2px;margin-bottom:14px}
+.testi-card p{color:#d1fae5;font-size:15px;margin-bottom:18px}
+.author{display:flex;align-items:center;gap:12px}
+.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--primary));display:grid;place-items:center;font-weight:700}
+.author-info b{display:block;font-size:14px;color:white}
+.author-info span{font-size:12px;color:#a7f3d0}
 
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      display: block;
-      font-size: 1.6rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: var(--dark);
-      padding: 8px;
-    }
+/* FAQ */
+.faq-wrap{max-width:860px;margin:0 auto}
+.faq-item{background:white;border:1px solid var(--gray-200);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:.3s}
+.faq-item.open{border-color:var(--primary);box-shadow:var(--shadow-sm)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 22px;font-weight:600;font-size:16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--dark)}
+.faq-q svg{transition:.3s;flex-shrink:0;margin-left:12px}
+.faq-item.open .faq-q svg{transform:rotate(45deg);color:var(--primary)}
+.faq-a{max-height:0;overflow:hidden;transition:.35s ease;padding:0 22px}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 20px}
+.faq-a p{color:var(--gray-600);font-size:15px}
 
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: white;
-      padding: 20px;
-      border-radius: 28px;
-      gap: 16px;
-      box-shadow: var(--shadow-md);
-      margin-top: 8px;
-      list-style: none;
-    }
+/* Final CTA */
+.cta-final{padding:100px 0;background:linear-gradient(135deg,var(--primary) 0%,#00693a 100%);color:white;text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='white' stroke-opacity='0.07' stroke-width='2'/%3E%3C/svg%3E")}
+.cta-final h2{color:white;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:12px}
+.cta-final p{color:#d1fae5;font-size:18px;margin-bottom:32px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-    .nav-links.show {
-      display: flex;
-    }
+/* Footer */
+footer{background:var(--dark);color:#cbd5e1;padding-top:70px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand p{margin:14px 0 20px;font-size:14px;color:#94a3b8;max-width:320px}
+.socials{display:flex;gap:12px}
+.socials a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:white;transition:.2s}
+.socials a:hover{background:var(--primary)}
+.footer-col h4{color:white;font-size:15px;margin-bottom:16px;font-weight:600}
+.footer-col ul{list-style:none;display:grid;gap:10px}
+.footer-col a{color:#94a3b8;font-size:14px;transition:.2s}
+.footer-col a:hover{color:white}
+.contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:14px;color:#94a3b8}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:13px;color:#64748b;flex-wrap:wrap;gap:12px}
 
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: var(--dark);
-      padding: 10px;
-      border-radius: 12px;
-      transition: all 0.2s;
-      font-size: 1rem;
-      text-align: center;
-    }
+/* WhatsApp */
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:90;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:white;box-shadow:0 10px 25px rgba(37,211,102,.4);transition:.3s;animation:float 3s ease-in-out infinite}
+.whatsapp:hover{transform:scale(1.08)}
+.whatsapp svg{width:28px;height:28px}
 
-    .nav-links a:hover, .nav-links a.active {
-      background: rgba(11, 94, 215, 0.1);
-      color: var(--primary);
-    }
+/* Animations */
+.reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.active{opacity:1;transform:none}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-    .btn-cta {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
-      padding: 10px 20px;
-      border-radius: 40px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    /* Buttons */
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.2s;
-      box-shadow: 0 6px 14px rgba(11, 94, 215, 0.25);
-    }
-
-    .btn-primary:hover { transform: translateY(-2px); background: var(--primary-dark); }
-
-    /* Hero Section */
-    .hero {
-      padding: 40px 0 60px;
-    }
-    .hero-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    @media (min-width: 768px) {
-      .hero-grid { flex-direction: row; align-items: center; }
-      .hero-content { flex: 1.2; }
-      .hero-image { flex: 1; }
-      .menu-toggle { display: none; }
-      .nav-links { display: flex; flex-direction: row; width: auto; background: transparent; padding: 0; gap: 28px; box-shadow: none; margin-top: 0; }
-      .nav-links a { padding: 6px 0; }
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(11, 94, 215, 0.12);
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, #0A2B44, var(--primary));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    @media (min-width: 480px) { .hero h1 { font-size: 2.8rem; } }
-    .hero p {
-      color: var(--gray);
-      font-size: 1rem;
-      margin-bottom: 24px;
-      max-width: 90%;
-    }
-    .hero-image {
-      border-radius: 32px;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      height: 280px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    /* Section Styles */
-    section { padding: 60px 0; }
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 12px;
-      color: #0A2B44;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--gray);
-      max-width: 650px;
-      margin: 0 auto 40px auto;
-      font-size: 1rem;
-    }
-    @media (min-width: 768px) { .section-title { font-size: 2.2rem; } }
-
-    /* Services Grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-    @media (min-width: 540px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1000px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
-    .service-card {
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      transition: all 0.3s;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-    }
-    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .service-img {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .service-content { padding: 20px; }
-    .service-icon { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
-    .service-content h3 { font-size: 1.3rem; margin-bottom: 8px; }
-    .service-content p { color: var(--gray); font-size: 0.9rem; margin-bottom: 16px; }
-    .service-tag {
-      display: inline-block;
-      background: #EFF6FF;
-      color: var(--primary);
-      padding: 4px 12px;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 700;
-    }
-    .book-service-btn {
-      margin-top: 16px;
-      background: transparent;
-      border: 1px solid var(--primary);
-      padding: 8px 16px;
-      border-radius: 40px;
-      font-weight: 600;
-      color: var(--primary);
-      cursor: pointer;
-      width: 100%;
-    }
-
-    /* About Section */
-    .about-flex {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    @media (min-width: 768px) { .about-flex { flex-direction: row; align-items: center; } }
-    .about-text { flex: 1; }
-    .about-image { flex: 1; border-radius: 32px; overflow: hidden; height: 280px; }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; }
-    .info-card {
-      background: white;
-      padding: 20px;
-      border-radius: 24px;
-      margin-top: 20px;
-      border: 1px solid var(--border);
-    }
-
-    /* Booking Section */
-    .booking-wrapper {
-      background: white;
-      border-radius: 32px;
-      padding: 30px 24px;
-      box-shadow: var(--shadow-md);
-      margin: 20px 0;
-    }
-    .booking-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    @media (min-width: 768px) { .booking-grid { flex-direction: row; } .booking-info, .booking-form { flex: 1; } }
-    .booking-info h3 { font-size: 1.6rem; margin-bottom: 16px; }
-    .feature-list { list-style: none; margin-top: 20px; }
-    .feature-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
-    .form-group { margin-bottom: 18px; }
-    input, select, textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      background: #fefefe;
-    }
-    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(11,94,215,0.2); }
-    .form-row { display: flex; flex-direction: column; gap: 14px; }
-    @media (min-width: 540px) { .form-row { flex-direction: row; } .form-row .form-group { flex: 1; } }
-
-    /* Contact Grid */
-    .contact-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-    @media (min-width: 768px) { .contact-grid { flex-direction: row; } }
-    .contact-card {
-      background: white;
-      padding: 24px;
-      border-radius: 28px;
-      flex: 1;
-    }
-    .contact-item { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-    .contact-item i { width: 32px; font-size: 1.3rem; color: var(--primary); }
-    .map-card { height: 280px; border-radius: 28px; overflow: hidden; flex: 1; }
-
-    /* Footer */
-    footer {
-      background: #0A1C2F;
-      color: #B0C4DE;
-      padding: 40px 0 24px;
-      margin-top: 40px;
-    }
-    .footer-flex {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      text-align: center;
-    }
-    @media (min-width: 640px) { .footer-flex { flex-direction: row; justify-content: space-between; text-align: left; } }
-    .social i { font-size: 1.5rem; margin: 0 12px; color: #B0C4DE; transition: 0.2s; cursor: pointer; }
-    .social i:hover { color: white; }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(5px);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-content {
-      background: white;
-      max-width: 550px;
-      width: 100%;
-      border-radius: 32px;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .modal-header {
-      padding: 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .modal-body { padding: 24px; }
-    .close-modal { background: none; border: none; font-size: 1.8rem; cursor: pointer; }
-    .success-msg { background: #E3F5EC; color: #1E7B48; padding: 12px; border-radius: 40px; text-align: center; margin-top: 16px; display: none; }
-
-    /* Utility */
-    img { max-width: 100%; height: auto; display: block; }
-    .text-center { text-align: center; }
-    .mt-4 { margin-top: 20px; }
-  </style>
+/* Responsive */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .how-steps{grid-template-columns:repeat(2,1fr)}
+  .how-steps::before{display:none}
+  .testi-grid{grid-template-columns:1fr;max-width:600px;margin:0 auto}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;flex-direction:column;align-items:flex-start;padding:20px;border-bottom:1px solid var(--gray-100);box-shadow:var(--shadow-md);gap:16px}
+  .nav.open{display:flex}
+  .menu-toggle{display:block}
+  .nav-cta .btn-outline{display:none}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .section-head{margin-bottom:40px}
+  section{padding:70px 0}
+  .hero{padding:80px 0 60px}
+  .why-grid{grid-template-columns:1fr}
+  .how-steps{grid-template-columns:1fr;gap:32px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <div class="navbar">
-      <div class="logo">
-        <div class="logo-icon">B</div>
-        <div class="logo-text">
-          <h1>BISLAB Laboratory</h1>
-          <span>MEDICAL DIAGNOSTICS CENTER</span>
-        </div>
-      </div>
-      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-item active">Home</a></li>
-        <li><a href="#about" class="nav-item">About Us</a></li>
-        <li><a href="#services" class="nav-item">Our Services</a></li>
-        <li><a href="#contact" class="nav-item">Contact Us</a></li>
-        <li><button class="btn-cta" id="openBookingNav"><i class="fas fa-calendar-alt"></i> Book Now</button></li>
-      </ul>
+<header class="header">
+  <div class="container nav-wrap">
+    <a href="#" class="logo">
+      <span class="logo-mark">BU</span>
+    BusinessUp HQ </a>
+    <nav class="nav" id="nav">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#how">Process</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#cta" class="btn btn-outline">Get Free Consultation</a>
+      <a href="#services" class="btn btn-primary">Register Now</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- HOME Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge"><i class="fas fa-microscope"></i> Trusted Diagnostics in Abeokuta</div>
-          <h1>Precision Testing.<br> Compassionate Care.</h1>
-          <p>BISLAB offers 3D Ultrasound, Digital X-Ray, ECG, DNA testing, Pap smear, infection screening & full blood analysis. Open 7 days a week — accurate results you can trust.</p>
-          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-            <button class="btn-primary" id="openBookingHero"><i class="fas fa-calendar-plus"></i> Book Appointment</button>
-            <a href="#services" class="btn-outline" style="text-decoration: none;">Explore Services →</a>
-          </div>
-          <div class="info-card" style="margin-top: 28px; background: #EFF6FF; border: none;">
-            <i class="fas fa-clock"></i> <strong>Open 7 days a week!</strong> Mon–Sat: 8am–7pm | Sun: 12pm–5pm<br>
-            <i class="fas fa-phone-alt"></i> +234 903 266 6266
-          </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-grid">
+    <div class="reveal active">
+      <div class="badge"><span class="badge-dot"></span>From Business Idea to Business Success — We Handle Everything</div>
+      <h1>Start, Register & Grow Your Business in Nigeria — <span>All in One Place</span></h1>
+      <p class="lead">We handle CAC, NAFDAC, SMEDAN, Trademark Registration, Website Development, Tax Registration, Business Compliance, and much more. Trusted by entrepreneurs, startups, SMEs, manufacturers, importers, exporters, NGOs, churches, associations, and corporate organizations.</p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-primary">
+          Register My Business
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://wa.me/2348123456789?text=Hello%20BusinessUp%2C%20I%20need%20a%20free%20consultation" class="btn btn-outline">Get Free Consultation</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          CAC Accredited
         </div>
-        <div class="hero-image">
-          <img src="https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780434964/Duck-ai-image-2026-06-02-21-14_dafjbd.jpg" alt="Modern lab with advanced equipment" loading="lazy">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          NAFDAC Consultant
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          SMEDAN Partner
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ABOUT Section -->
-  <section id="about">
-    <div class="container">
-      <div class="about-flex">
-        <div class="about-text">
-          <h2 class="section-title" style="text-align: left;">About BISLAB</h2>
-          <p><strong>BISLAB Medical Diagnostics Center</strong> is a premier diagnostic hub located beside Ebemfem Filling Station, 39 Tinubu Street Ita-Eko, Abeokuta, Ogun State. We combine cutting-edge technology with a patient-first approach.</p>
-          <div class="info-card">
-            <p><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> <strong>Address:</strong> Beside ebemfem filling station, 39, TINUBU STREET ITA-EKO ABEOKUTA, OGUN STATE</p>
-            <p><i class="fas fa-phone-alt" style="color: var(--primary);"></i> <strong>Call:</strong> +234 903 266 6266</p>
-            <p><i class="fas fa-calendar-week"></i> <strong>Hours:</strong> Mon–Sat 8am–7pm | Sun 12pm–5pm</p>
+    <div class="reveal">
+      <div class="hero-card">
+        <div class="hero-card-head">
+          <b style="font-family:Poppins">Live Application Tracker</b>
+          <span class="status"><span style="width:6px;height:6px;background:currentColor;border-radius:50%"></span>Active</span>
+        </div>
+        <div class="progress-list">
+          <div class="progress">
+            <div class="progress-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="progress-text"><b>CAC Business Name Approved</b><span>Completed in 4 days</span></div>
           </div>
-          <p>From blood screening to DNA tests & infection testing, our certified team ensures rapid, reliable results. Your health, our priority.</p>
-          <button class="btn-primary mt-4" id="openBookingAbout"><i class="fas fa-calendar-check"></i> Schedule a Visit</button>
-        </div>
-        <div class="about-image">
-          <img src="https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780433924/abt_ss3j62.png" alt="Medical professional in lab" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES Section (complete list) -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Our Comprehensive Services</h2>
-      <p class="section-sub">Advanced imaging, full laboratory panels & specialized health checks — all in one place.</p>
-      <div class="services-grid" id="servicesGrid">
-        <!-- Service cards will be populated via JS for easy maintenance, but also static fallback -->
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING Section (inline appointment) -->
-  <div class="container" id="appointment">
-    <div class="booking-wrapper">
-      <div class="booking-grid">
-        <div class="booking-info">
-          <h3><i class="fas fa-calendar-alt"></i> Online Booking</h3>
-          <p>Reserve your slot in minutes. Our team will confirm via SMS or WhatsApp.</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Same-day appointments available</li>
-            <li><i class="fas fa-truck-fast"></i> Home sample collection (Abeokuta metro)</li>
-            <li><i class="fas fa-file-pdf"></i> Digital reports via WhatsApp/email</li>
-          </ul>
-          <div class="info-card" style="background: #F0F7FF;">
-            <i class="fas fa-phone-volume"></i> Or call us directly: <strong>+234 903 266 6266</strong>
+          <div class="progress">
+            <div class="progress-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="progress-text"><b>TIN & FIRS Registration</b><span>In progress - 24hrs</span></div>
+          </div>
+          <div class="progress">
+            <div class="progress-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3"/></svg>
+            </div>
+            <div class="progress-text"><b>Website Development</b><span>Design phase</span></div>
           </div>
         </div>
-        <div class="booking-form">
-          <h4 style="font-size: 1.4rem; margin-bottom: 20px;">Request an Appointment</h4>
-          <form id="appointmentForm">
-            <div class="form-row">
-              <div class="form-group"><input type="text" id="appName" placeholder="Full name *" required></div>
-              <div class="form-group"><input type="tel" id="appPhone" placeholder="Phone number *" required></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><input type="email" id="appEmail" placeholder="Email address"></div>
-              <div class="form-group"><select id="appService" required><option value="" disabled selected>Select service *</option></select></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><input type="date" id="appDate" required></div>
-              <div class="form-group"><select id="appTime"><option>Morning (8am-12pm)</option><option>Afternoon (12pm-4pm)</option><option>Evening (4pm-7pm)</option></select></div>
-            </div>
-            <div class="form-group"><textarea rows="2" placeholder="Additional notes / home collection request"></textarea></div>
-            <button type="submit" class="btn-primary" style="width:100%"><i class="fas fa-paper-plane"></i> Submit Booking</button>
-            <div id="formSuccessMsg" class="success-msg">✔ Appointment request sent! We'll contact you shortly.</div>
-          </form>
+        <div style="margin-top:20px;padding:14px;background:var(--light);border-radius:10px;font-size:13px;color:var(--primary);font-weight:600;text-align:center">
+          🇳🇬 Serving all 36 states + FCT • Bank-level security
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CONTACT Section -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="section-sub">Visit our diagnostic center in Ita-Eko, Abeokuta. We're here for you.</p>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-item"><i class="fas fa-location-dot"></i> <span><strong>BISLAB Laboratory</strong><br>Beside Ebemfem Filling Station, 39, TINUBU STREET ITA-EKO, ABEOKUTA, OGUN STATE</span></div>
-          <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+234 903 266 6266</span></div>
-          <div class="contact-item"><i class="fas fa-envelope"></i> <span>care@bislabmed.com</span></div>
-          <div class="contact-item"><i class="far fa-clock"></i> <span>Mon–Sat: 8am–7pm | Sun: 12pm–5pm</span></div>
-          <button class="btn-primary" id="openBookingContact" style="margin-top: 12px; width: 100%;"><i class="fab fa-whatsapp"></i> Book via WhatsApp</button>
+<!-- TRUST -->
+<section class="stats" id="trust">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1"/></svg>
         </div>
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.458294753623!2d3.355741614772879!3d7.09453459416331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103a4f23e5ebc297%3A0x68d20e484e2c4615!2sAbeokuta!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="stat-num">5,000+</div>
+        <div class="stat-label">Businesses Registered</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21l8-10"/></svg>
+        </div>
+        <div class="stat-num">1,000+</div>
+        <div class="stat-label">Websites Designed</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Customer Satisfaction</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="stat-num">36+1</div>
+        <div class="stat-label">Nationwide Coverage</div>
+      </div>
+    <div class="logos">
+      <div class="logo-pill">Flutterwave</div>
+      <div class="logo-pill">Paystack</div>
+      <div class="logo-pill">Nigerian SMEs</div>
+      <div class="logo-pill">Manufacturers</div>
+      <div class="logo-pill">Importers & Exporters</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">One-Stop Shop</span>
+      <h2>Everything to Launch & Scale in Nigeria</h2>
+      <p>From CAC to NAFDAC to your website — we handle the paperwork, compliance, and digital presence so you can focus on growth.</p>
+    </div>
+
+    <div class="services-tabs reveal">
+      <button class="tab-btn active" data-tab="tab-business">Business Registration</button>
+      <button class="tab-btn" data-tab="tab-regulatory">Regulatory Compliance</button>
+      <button class="tab-btn" data-tab="tab-sme">SME Support</button>
+      <button class="tab-btn" data-tab="tab-digital">Digital Services</button>
+      <button class="tab-btn" data-tab="tab-corporate">Corporate</button>
+    </div>
+
+    <div id="tab-business" class="tab-panel active">
+      <div class="services-grid">
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/></svg></div><div><h4>CAC Business Name Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div><h4>CAC Limited Company Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div><div><h4>NGO Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><div><h4>Incorporated Trustees</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div><h4>Business Name Reservation</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div><div><h4>Annual Returns Filing</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17v-2m3 2v-4m3 4v-6M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2h-4"/></svg></div><div><h4>Company Status Reports</h4><span class="learn">Learn More →</span></div></div>
+      </div>
+    </div>
+
+    <div id="tab-regulatory" class="tab-panel">
+      <div class="services-grid">
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4>NAFDAC Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>SONCAP Certification</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>SON Certification</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2-2m2 2l2-2m-2 2v-9m7 7v4a2 2 0 01-2 2H7a2 2 0 01-2-2v-4"/></svg></div><div><h4>Trademark Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></svg></div><div><h4>Copyright Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 0 005 15.4a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09c0 .66.39 1.26 1 1.51.6.25 1.31.12 1.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06c-.45.51-.58 1.22-.33 1.82.25.6.85 1 1.51 1H21a2 2 0 010 4h-.09c-.66 0-1.26.39-1.51 1z"/></svg></div><div><h4>Patent Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H4m16-6H10"/></svg></div><div><h4>Product Approval Services</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div><h4>Import & Export Documentation</h4><span class="learn">Learn More →</span></div></div>
+      </div>
+    </div>
+
+    <div id="tab-sme" class="tab-panel">
+      <div class="services-grid">
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/></svg></div><div><h4>SMEDAN Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div><div><h4>Tax Identification Number (TIN)</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/></svg></div><div><h4>FIRS Registration</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20V10M18 20V4"/></svg></div><div><h4>Business Advisory Services</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3"/></svg></div><div><h4>Startup Consulting</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16c0 1.1.9 2 2 2h12a2 2 0 002-2V8l-6-6z"/></svg></div><div><h4>Business Plan Development</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.39 0 4.56.93 6.17 2.44"/></svg></div><div><h4>Grant Application Support</h4><span class="learn">Learn More →</span></div></div>
+      </div>
+    </div>
+
+    <div id="tab-digital" class="tab-panel">
+      <div class="services-grid">
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div><div><h4>Professional Website Design</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z"/></svg></div><div><h4>E-commerce Website Development</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Landing Page Design</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/></svg></div><div><h4>Mobile App Development</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94"/></svg></div><div><h4>Logo Design</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></div><div><h4>Brand Identity Design</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div><div><h4>Graphic Design</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35"/></svg></div><div><h4>SEO Optimization</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/></svg></div><div><h4>Google Business Profile Setup</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div><div><h4>Social Media Management</h4><span class="learn">Learn More →</span></div></div>
+      </div>
+    </div>
+
+    <div id="tab-corporate" class="tab-panel">
+      <div class="services-grid">
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div><div><h4>Corporate Documentation</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Compliance Monitoring</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/></svg></div><div><h4>Company Secretarial Services</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20V10M18 20V4"/></svg></div><div><h4>Business Consulting</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div><h4>Staff Training</h4><span class="learn">Learn More →</span></div></div>
+        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0110 10c0 5.5-4.5 10-10 10"/></svg></div><div><h4>Digital Transformation Services</h4><span class="learn">Learn More →</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why BusinessUp</span>
+      <h2>Built for Nigerian Entrepreneurs</h2>
+      <p>We combine CAC accreditation, regulatory expertise, and modern tech to make business formalization fast and stress-free.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <h3>Fast Processing</h3>
+        <p>Get CAC in 3-7 days. We pre-vet names, prepare documents correctly, and follow up daily with agencies.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <h3>Expert Support</h3>
+        <p>Dedicated account manager via WhatsApp. Real humans, not bots. We guide you at every step.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 0 010 7H6"/></svg></div>
+        <h3>Affordable Pricing</h3>
+        <p>Transparent, no hidden fees. Pay in naira, get official receipts. Bundle services and save more.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3>Secure Documentation</h3>
+        <p>Bank-level data protection. Your CAC certificates, TIN, and brand files stored securely in your portal.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg></div>
+        <h3>Transparent Process</h3>
+        <p>Real-time tracking portal. See exactly where your application is with CAC, NAFDAC, or SON.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/></svg></div>
+        <h3>Nationwide Coverage</h3>
+        <p>Serving all 36 states + FCT remotely. Lagos, Abuja, Port Harcourt, Kano, Ibadan — we’re everywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>From Idea to Approved in 4 Simple Steps</h2>
+    </div>
+    <div class="how-steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h4>Choose Service</h4>
+        <p>Select CAC, NAFDAC, website, or bundle. Get instant quote on WhatsApp.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h4>Submit Documents</h4>
+        <p>Send via WhatsApp/email. We review and prepare everything for you.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h4>We Process Everything</h4>
+        <p>Our accredited agents handle CAC, NAFDAC, SON, FIRS, etc. daily follow-up.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h4>Receive Approval</h4>
+        <p>Get your certificates, TIN, and website live. 100% delivered to your portal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:#6ee7b7">Trusted by 5,000+ Founders</span>
+      <h2>Real Nigerian Business Stories</h2>
+      <p>Entrepreneurs across fashion, food, tech, and importation choose BusinessUp.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"BusinessUp registered my CAC and built my e-commerce site in 2 weeks. One team, zero stress. I was selling online before my certificate even arrived."</p>
+        <div class="author">
+          <div class="avatar">AM</div>
+          <div class="author-info"><b>Adeola M.</b><span>Lagos Fashion Brand</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"NAFDAC and SONCAP used to take months. They handled everything in 4 weeks. My skincare products are now in Shoprite nationwide."</p>
+        <div class="author">
+          <div class="avatar">CO</div>
+          <div class="author-info"><b>Chinedu O.</b><span>Abuja Importer</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"From SMEDAN to TIN to website – they truly are one-stop. My grant application was approved because my documentation was perfect."</p>
+        <div class="author">
+          <div class="avatar">FS</div>
+          <div class="author-info"><b>Fatima S.</b><span>Kano SME</span></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common Questions from Founders</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-q">How long does CAC registration take? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Business Name: typically 3-5 working days after name approval. Limited Company (LTD): 5-7 working days. NGO/Incorporated Trustees: 21-28 days. Timelines depend on CAC, but we expedite and follow up daily.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What's the difference between Business Name and Limited Company? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Business Name is for sole proprietors/partnerships – simpler, cheaper, but you have unlimited liability. Limited Company (LTD) is a separate legal entity, offers limited liability, can own property, raise investment, and is preferred by banks, corporates, and for international trade.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you handle NAFDAC for food and cosmetics? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes. We handle full NAFDAC registration for food, drinks, cosmetics, packaged water, supplements, medical devices, and chemicals – including documentation, lab analysis coordination, and factory inspection support.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Can you help with trademark registration in Nigeria? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Absolutely. We conduct availability search, file with the Trademarks, Patents & Designs Registry, monitor acceptance, handle journal publication, and secure your certificate (usually 6-12 months).</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Is SMEDAN registration free? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>The SMEDAN certificate is free from the government. We charge a small service fee for correctly filling the forms, uploading documents, and ensuring fast approval – usually within 24-48 hours.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you build websites for businesses outside Lagos? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes! We serve all 36 states + FCT 100% remotely via WhatsApp and Zoom. We've built 1,000+ sites for clients in Abuja, PH, Kano, Ibadan, Enugu, and diaspora Nigerians.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What documents do I need to start? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>For CAC Business Name: Valid ID (NIN, Passport), passport photo, business address, 2 proposed names. For LTD: Directors' details, shareholder info, ID, and address. We send a simple checklist after your free consultation.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">How do I track my application? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>You get a dedicated account manager and access to our client portal with real-time status updates. We also send WhatsApp and email notifications at every milestone – name approval, payment, filing, and certificate issuance.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-final" id="cta">
+  <div class="container reveal">
+    <h2>Ready to Launch Your Business?</h2>
+    <p>Let BusinessUp Nigeria handle the paperwork while you focus on growth.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/2348123456789?text=I%20want%20to%20start%20registration%20now" class="btn btn-white">Start Registration Now</a>
+      <a href="https://wa.me/2348123456789" class="btn btn-outline" style="border-color:white;color:white">Chat on WhatsApp</a>
+    </div>
+    <div style="margin-top:28px;font-size:14px;opacity:.9">Abeokuta, Ogun State | hello@businessup.ng | +234 800 BUSINESSUP</div>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="container">
-    <div class="footer-flex">
-      <div>
-        <h3 style="color: white;">BISLAB Laboratory</h3>
-        <p>MEDICAL DIAGNOSTICS CENTER<br>Trusted diagnostics in Abeokuta</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="color:white"><span class="logo-mark">BU</span>BusinessUp Nigeria</a>
+        <p>From Business Idea to Business Success — We Handle Everything. CAC accredited consultants for registration, compliance, and digital growth.</p>
+        <div class="socials">
+          <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.8c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.2 1.7-2.1-.8.5-1.6.8-2.5 1A3.9 3.9 0 0012 9c0 .3 0 .6.1.9-3.2-.2-6-1.7-7.9-4a4 4 0 001.2 5.2c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.3 3.5 3.1 3.9-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.5 1.9 2.6 3.5 2.6A7.8 7.8 0 012 19.5 11 11 0 008 21c7.2 0 11.2-6 11.2-11.2v-.5c.8-.6 1.4-1.3 1.8-2.1z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.3-2.6 4.8-2.6 5.1 0 6 3.4 6 7.7V24h-5V16.4c0-1.8 0-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4V24h-5V8z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+        </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">CAC Registration</a></li>
+          <li><a href="#services">NAFDAC & SON</a></li>
+          <li><a href="#services">Trademark</a></li>
+          <li><a href="#services">SMEDAN & TIN</a></li>
+          <li><a href="#services">Website Design</a></li>
+        </ul>
       </div>
-      <div class="social">
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-whatsapp"></i>
-        <i class="fab fa-linkedin-in"></i>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#how">Our Process</a></li>
+          <li><a href="#testimonials">Success Stories</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/></svg>
+          <span>Abeokuta, Ogun State. Serving all Nigeria</span>
+        </div>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span>hello@businessup.ng</span>
+        </div>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.3 1.77.57 2.61a2 2 0 01-.45 2.11L8 9a16 16 0 006 6l.55-1.23a2 2 0 012.11-.45c.84.27 1.71.45 2.61.57A2 2 0 0122 16.92z"/></svg>
+          <span>+234 812 345 6789</span>
+        </div>
       </div>
     </div>
-    <div class="text-center" style="margin-top: 32px; font-size: 0.75rem;">© 2026 BISLAB Laboratory –  All rights reserved.</div>
+    <div class="footer-bottom">
+      <span>© 2025 BusinessUp Nigeria. All rights reserved. CAC Accredited Agent.</span>
+      <span>Built with 🇳🇬 for Nigerian Entrepreneurs</span>
+    </div>
   </div>
 </footer>
 
-<!-- MODAL for quick booking popup (optional but nice) -->
-<div id="bookingModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <strong style="font-size: 1.3rem;">Quick Appointment</strong>
-      <button class="close-modal" id="closeModalBtn">&times;</button>
-    </div>
-    <div class="modal-body">
-      <form id="quickBookingForm">
-        <div class="form-group"><input type="text" id="qName" placeholder="Full name *" required></div>
-        <div class="form-group"><input type="tel" id="qPhone" placeholder="Phone number *" required></div>
-        <div class="form-group"><select id="qService" required><option value="" disabled selected>Select service</option></select></div>
-        <div class="form-group"><input type="date" id="qDate" required></div>
-        <button type="submit" class="btn-primary" style="width:100%">Submit Request</button>
-        <div id="modalSuccess" class="success-msg"></div>
-      </form>
-    </div>
-  </div>
-</div>
+<a href="https://wa.me/2348123456789?text=Hello%20BusinessUp" class="whatsapp" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M19.1 17.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.2c-.2.2-.3.2-.6.1s-1.2-.4-2.2-1.4c-.8-.7-1.4-1.6-1.5-1.9s0-.4.1-.5c.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5s0-.4 0-.6c0-.2-.7-1.7-.9-2.3-.2-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3c.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 27l6.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3z"/></svg>
+</a>
 
 <script>
-  // ----- SERVICES DATA (complete list)
-  const servicesList = [
-    { name: "Laboratory Tests", icon: "fa-vial", desc: "Full blood count, hormone assays, infection markers.", tag: "Fast results", img: "https://res.cloudinary.com/dvojnfcts/image/upload/f_auto,q_auto/Laboratory_Tests_kvphkg" },
-    { name: "3D Ultrasound", icon: "fa-fetal-monitor", desc: "High-resolution 3D/4D obstetrics & pelvic scans.", tag: "Advanced imaging", img: "https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780431983/ultrasound-image-baby-mothers-womb_476363-2026_jl0gcf.avif" },
-    { name: "Digital X-Ray", icon: "fa-x-ray", desc: "Low-dose digital radiography for accurate diagnosis.", tag: "Instant results", img: "https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780266692/6883253_29690-1024x791_gvutp5.jpg" },
-    { name: "ECG", icon: "fa-heartbeat", desc: "Cardiac rhythm analysis & heart health screening.", tag: "Cardiac care", img: "https://res.cloudinary.com/dvojnfcts/image/upload/v1780430250/63c10dab9e0c9__s9n8rb.webp" },
-    { name: "Employment Screening", icon: "fa-briefcase", desc: "Pre-employment health checks & fitness certificates.", tag: "Corporate", img: "https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780433082/LABB_gralcp.jpg" },
-    { name: "General Health Checks", icon: "fa-notes-medical", desc: "Comprehensive wellness packages & preventive panels.", tag: "Tailored plans", img: "https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780432545/user-1753698980_hfydrp.jpg" },
-    { name: "DNA Testing", icon: "fa-dna", desc: "Paternity, maternity & genetic analysis.", tag: "Confidential", img: "https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780431290/doctor-holding-test-blood-sample-600nw-2510981293_jlpdm5.webp" },
-    { name: "Pap Smear Test", icon: "fa-female", desc: "Cervical cancer screening – early detection saves lives.", tag: "Women's health", img: "https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780431695/Pap-smear-content_kaymg3.webp" },
-    { name: "Infection Testing", icon: "fa-biohazard", desc: "STI panels, hepatitis, HIV, malaria, typhoid.", tag: "Confidential", img: "https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780432793/istockphoto-2150341687-612x612_zoy5dr.jpg" },
-    { name: "Blood Screening", icon: "fa-tint", desc: "Complete blood analysis, cholesterol, diabetes screening.", tag: "Precision lab", img: "https://res.cloudinary.com/dvojnfcts/image/upload/q_auto/f_auto/v1780432272/260421-blood-vials-gk-2adbd7_jrdlbm.webp" }
-  ];
+document.addEventListener('DOMContentLoaded',()=>{
+  const toggle=document.getElementById('menuToggle');
+  const nav=document.getElementById('nav');
+  toggle.addEventListener('click',()=>nav.classList.toggle('open'));
 
-  function renderServices() {
-    const container = document.getElementById("servicesGrid");
-    if (!container) return;
-    container.innerHTML = servicesList.map(s => `
-      <div class="service-card">
-        <div class="service-img" style="background-image: url('${s.img}'); background-size: cover;"></div>
-        <div class="service-content">
-          <i class="fas ${s.icon} service-icon"></i>
-          <h3>${s.name}</h3>
-          <p>${s.desc}</p>
-          <span class="service-tag">${s.tag}</span>
-          <button class="book-service-btn" data-service="${s.name}"><i class="fas fa-calendar-check"></i> Book Now</button>
-        </div>
-      </div>
-    `).join('');
-    // attach booking events
-    document.querySelectorAll('.book-service-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const service = btn.getAttribute('data-service');
-        openModalWithService(service);
-      });
-    });
-  }
-
-  // Populate select options
-  function populateSelects() {
-    const selects = document.querySelectorAll('#appService, #qService');
-    selects.forEach(select => {
-      select.innerHTML = '<option value="" disabled selected>Select service *</option>' + servicesList.map(s => `<option value="${s.name}">${s.name}</option>`).join('');
-    });
-  }
-
-  // Modal Logic
-  const modal = document.getElementById('bookingModal');
-  function openModalWithService(serviceName) {
-    if (modal) {
-      modal.style.display = 'flex';
-      if (serviceName) {
-        const qService = document.getElementById('qService');
-        if (qService) qService.value = serviceName;
-      }
-      document.getElementById('modalSuccess').style.display = 'none';
-    }
-  }
-  function closeModal() { if(modal) modal.style.display = 'none'; }
-  document.getElementById('closeModalBtn')?.addEventListener('click', closeModal);
-  window.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
-
-  // Open modal from various buttons
-  const openers = ['openBookingNav', 'openBookingHero', 'openBookingAbout', 'openBookingContact'];
-  openers.forEach(id => {
-    const btn = document.getElementById(id);
-    if(btn) btn.addEventListener('click', () => openModalWithService(null));
+  const tabs=document.querySelectorAll('.tab-btn');
+  const panels=document.querySelectorAll('.tab-panel');
+  tabs.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      tabs.forEach(b=>b.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    })
   });
 
-  // Quick booking form
-  const quickForm = document.getElementById('quickBookingForm');
-  if(quickForm) {
-    quickForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('qName').value.trim();
-      const phone = document.getElementById('qPhone').value.trim();
-      const service = document.getElementById('qService').value;
-      if(!name || !phone || !service) { alert('Please fill required fields'); return; }
-      const successDiv = document.getElementById('modalSuccess');
-      successDiv.textContent = `✓ Thanks ${name}! We'll contact you for ${service} shortly.`;
-      successDiv.style.display = 'block';
-      quickForm.reset();
-      setTimeout(() => { closeModal(); }, 2500);
-    });
-  }
-
-  // Main appointment form (inline)
-  const mainForm = document.getElementById('appointmentForm');
-  const successMsgDiv = document.getElementById('formSuccessMsg');
-  if(mainForm) {
-    mainForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('appName').value.trim();
-      const phone = document.getElementById('appPhone').value.trim();
-      const service = document.getElementById('appService').value;
-      if(!name || !phone || !service) { alert('Please fill name, phone and service'); return; }
-      successMsgDiv.style.display = 'block';
-      mainForm.reset();
-      setTimeout(() => { successMsgDiv.style.display = 'none'; }, 4000);
-    });
-  }
-
-  // Set min date for date inputs
-  const today = new Date().toISOString().split('T')[0];
-  document.querySelectorAll('input[type="date"]').forEach(el => el.min = today);
-
-  // Mobile Menu
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinksMenu = document.getElementById('navLinks');
-  if(menuToggle) {
-    menuToggle.addEventListener('click', () => navLinksMenu.classList.toggle('show'));
-  }
-  // Active link highlight + close menu on click
-  const sections = document.querySelectorAll('section');
-  const navItems = document.querySelectorAll('.nav-item');
-  function updateActive() {
-    let current = '';
-    const scrollPos = window.scrollY + 120;
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.clientHeight;
-      if(scrollPos >= top && scrollPos < top + height) current = section.getAttribute('id');
-    });
-    navItems.forEach(link => {
-      const href = link.getAttribute('href')?.substring(1);
-      if(href === current || (current === 'home' && href === 'home')) link.classList.add('active');
-      else link.classList.remove('active');
-    });
-  }
-  window.addEventListener('scroll', updateActive);
-  window.addEventListener('load', () => { updateActive(); renderServices(); populateSelects(); });
-
-  // Smooth scroll & close mobile menu
-  document.querySelectorAll('.nav-item, .btn-outline, .btn-primary[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if(href && href.startsWith('#')) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if(target) target.scrollIntoView({ behavior: 'smooth' });
-        if(navLinksMenu.classList.contains('show')) navLinksMenu.classList.remove('show');
-      }
-    });
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;
+      const open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!open) item.classList.add('open');
+    })
   });
-  document.getElementById('openBookingHero')?.addEventListener('click', () => openModalWithService(null));
-  document.getElementById('openBookingAbout')?.addEventListener('click', () => openModalWithService(null));
-  document.getElementById('openBookingContact')?.addEventListener('click', () => openModalWithService(null));
+
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');io.unobserve(e.target)}})
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){e.preventDefault();document.querySelector(id)?.scrollIntoView({behavior:'smooth'});nav.classList.remove('open')}
+    })
+  });
+
+  const hdr=document.querySelector('.header');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>8));
+});
 </script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
 </body>
 </html>
