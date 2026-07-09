@@ -1,729 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BusinessUp Nigeria — Start, Register & Grow Your Business in Nigeria</title>
-<meta name="description" content="BusinessUp Nigeria is your one-stop destination for CAC, NAFDAC, SMEDAN, Trademark, Website Design, Tax & Compliance. From Business Idea to Business Success.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --primary:#008751;
-  --accent:#00B368;
-  --dark:#0F2419;
-  --white:#FFFFFF;
-  --light:#F5FDF8;
-  --gray-50:#f8fafc;
-  --gray-100:#f1f5f9;
-  --gray-200:#e2e8f0;
-  --gray-600:#475569;
-  --gray-800:#1e293b;
-  --shadow-sm:0 4px 12px rgba(0,135,81,.06);
-  --shadow-md:0 10px 30px rgba(0,135,81,.08);
-  --shadow-lg:0 20px 50px rgba(0,135,81,.12);
-  --radius:16px;
-  --radius-sm:12px;
-  --max:1200px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  color:var(--dark);
-  background:var(--white);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-h1,h2,h3{font-family:'Poppins',Inter,sans-serif;letter-spacing:-.02em;line-height:1.15}
-h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700}
-h2{font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700}
-h3{font-size:1.25rem;font-weight:600}
-p{color:var(--gray-600)}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;
-  transition:.3s ease;cursor:pointer;border:2px solid transparent;white-space:nowrap
-}
-.btn-primary{background:linear-gradient(135deg,var(--primary),var(--accent));color:white;box-shadow:0 8px 20px rgba(0,135,81,.25)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,135,81,.3)}
-.btn-outline{background:transparent;border-color:var(--primary);color:var(--primary)}
-.btn-outline:hover{background:var(--light);transform:translateY(-2px)}
-.btn-white{background:white;color:var(--primary);font-weight:700}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.1)}
-.badge{
-  display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:var(--light);
-  border:1px solid rgba(0,135,81,.15);border-radius:999px;color:var(--primary);
-  font-size:13px;font-weight:600;margin-bottom:20px
-}
-.badge-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
-
-/* Header */
-.header{
-  position:sticky;top:0;z-index:100;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(12px);
-  border-bottom:1px solid transparent;transition:.3s
-}
-.header.scrolled{border-color:var(--gray-100);box-shadow:var(--shadow-sm)}
-.nav-wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--dark)}
-.logo-mark{
-  width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));
-  display:grid;place-items:center;color:white;font-family:Poppins;font-weight:700
-}
-.nav{display:flex;align-items:center;gap:28px}
-.nav a{font-size:14.5px;font-weight:500;color:var(--gray-600);transition:.2s}
-.nav a:hover{color:var(--primary)}
-.nav-cta{display:flex;align-items:center;gap:12px}
-.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
-.menu-toggle svg{width:24px;height:24px}
-
-/* Hero */
-.hero{position:relative;padding:110px 0 80px;overflow:hidden;background:linear-gradient(180deg,#fafffc 0%,#ffffff 60%)}
-.hero-bg{position:absolute;inset:0;pointer-events:none;opacity:.6;
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23008751' stroke-opacity='0.07' stroke-width='1.5'%3E%3Cpath d='M120 80 L180 65 L240 75 L285 115 L310 175 L280 235 L225 275 L165 265 L110 225 L85 165 L95 110 Z'/%3E%3Cpath d='M80 200 Q150 180 220 200 T320 210'/%3E%3C/g%3E%3C/svg%3E");
-background-size:380px}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
-.hero h1 span{color:var(--primary);background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p.lead{font-size:18px;margin:20px 0 32px;max-width:580px}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-.trust-row{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:40px;padding-top:24px;border-top:1px solid var(--gray-100)}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--dark)}
-.trust-item svg{color:var(--primary)}
-.hero-card{
-  background:white;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-lg);
-  border:1px solid var(--gray-100);position:relative
-}
-.hero-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.status{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--accent);background:#e6f7ef;padding:6px 10px;border-radius:999px}
-.progress-list{display:grid;gap:14px}
-.progress{display:flex;align-items:center;gap:12px}
-.progress-icon{width:36px;height:36px;border-radius:10px;background:var(--light);display:grid;place-items:center;color:var(--primary)}
-.progress-text{flex:1}
-.progress-text b{display:block;font-size:14px}
-.progress-text span{font-size:12px;color:var(--gray-600)}
-
-/* Sections */
-section{padding:88px 0}
-.section-head{text-align:center;max-width:720px;margin:0 auto 56px}
-.section-head p{margin-top:12px;font-size:17px}
-.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
-
-/* Trust stats */
-.stats{background:var(--gray-50);border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.stat-card{
-  background:white;padding:28px 24px;border-radius:var(--radius-sm);border:1px solid var(--gray-100);
-  text-align:center;transition:.3s;box-shadow:var(--shadow-sm)
-}
-.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.stat-icon{width:44px;height:44px;margin:0 auto 12px;border-radius:12px;background:linear-gradient(135deg,var(--light),#e8f9f0);display:grid;place-items:center;color:var(--primary)}
-.stat-num{font-size:32px;font-weight:700;font-family:Poppins;color:var(--dark)}
-.stat-label{font-size:14px;color:var(--gray-600);margin-top:4px}
-.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px;margin-top:48px;opacity:.7}
-.logo-pill{padding:10px 18px;border:1px dashed var(--gray-200);border-radius:999px;font-weight:600;font-size:14px;color:var(--gray-600);background:white}
-
-/* Services */
-.services-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;background:var(--gray-100);padding:6px;border-radius:999px;width:fit-content;margin-inline:auto}
-.tab-btn{padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;color:var(--gray-600);background:transparent;border:none;cursor:pointer;transition:.25s}
-.tab-btn.active{background:white;color:var(--primary);box-shadow:var(--shadow-sm)}
-.tab-panel{display:none;animation:fade .4s ease}
-.tab-panel.active{display:block}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
-.service-card{
-  background:white;border:1px solid var(--gray-100);border-radius:14px;padding:18px 18px;
-  display:flex;gap:14px;align-items:flex-start;transition:.3s;cursor:pointer
-}
-.service-card:hover{border-color:rgba(0,135,81,.3);transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.s-icon{width:40px;height:40px;flex-shrink:0;border-radius:10px;background:var(--light);display:grid;place-items:center;color:var(--primary)}
-.service-card h4{font-size:15px;font-weight:600;margin-bottom:4px}
-.service-card .learn{font-size:12.5px;color:var(--primary);font-weight:600;opacity:0;transition:.2s}
-.service-card:hover .learn{opacity:1}
-
-/* Why */
-.why{background:linear-gradient(180deg,white,var(--light))}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.why-card{background:white;border:1px solid var(--gray-100);border-radius:var(--radius);padding:28px;transition:.3s}
-.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.why-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;color:white;margin-bottom:16px}
-.why-card h3{margin-bottom:8px;font-size:18px}
-.why-card p{font-size:14.5px}
-
-/* How */
-.how-steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px}
-.how-steps::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));opacity:.2;z-index:0}
-.step{position:relative;text-align:center;padding-top:12px}
-.step-num{width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:white;border:2px solid var(--primary);display:grid;place-items:center;font-weight:700;color:var(--primary);font-family:Poppins;box-shadow:0 0 0 8px var(--light);position:relative;z-index:1}
-.step h4{margin-bottom:6px}
-.step p{font-size:14px}
-
-/* Testimonials */
-.testimonials{background:var(--dark);color:white;position:relative;overflow:hidden}
-.testimonials::before{content:'';position:absolute;inset:0;background:radial-gradient(600px at 20% -10%, rgba(0,179,104,.3), transparent 60%)}
-.testimonials .section-head h2,.testimonials .section-head p{color:white}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
-.testi-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:28px;border-radius:var(--radius);transition:.3s}
-.testi-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.09)}
-.stars{color:#FFC107;display:flex;gap:2px;margin-bottom:14px}
-.testi-card p{color:#d1fae5;font-size:15px;margin-bottom:18px}
-.author{display:flex;align-items:center;gap:12px}
-.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--primary));display:grid;place-items:center;font-weight:700}
-.author-info b{display:block;font-size:14px;color:white}
-.author-info span{font-size:12px;color:#a7f3d0}
-
-/* FAQ */
-.faq-wrap{max-width:860px;margin:0 auto}
-.faq-item{background:white;border:1px solid var(--gray-200);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:.3s}
-.faq-item.open{border-color:var(--primary);box-shadow:var(--shadow-sm)}
-.faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 22px;font-weight:600;font-size:16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--dark)}
-.faq-q svg{transition:.3s;flex-shrink:0;margin-left:12px}
-.faq-item.open .faq-q svg{transform:rotate(45deg);color:var(--primary)}
-.faq-a{max-height:0;overflow:hidden;transition:.35s ease;padding:0 22px}
-.faq-item.open .faq-a{max-height:300px;padding:0 22px 20px}
-.faq-a p{color:var(--gray-600);font-size:15px}
-
-/* Final CTA */
-.cta-final{padding:100px 0;background:linear-gradient(135deg,var(--primary) 0%,#00693a 100%);color:white;text-align:center;position:relative;overflow:hidden}
-.cta-final::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='white' stroke-opacity='0.07' stroke-width='2'/%3E%3C/svg%3E")}
-.cta-final h2{color:white;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:12px}
-.cta-final p{color:#d1fae5;font-size:18px;margin-bottom:32px}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-/* Footer */
-footer{background:var(--dark);color:#cbd5e1;padding-top:70px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08)}
-.footer-brand p{margin:14px 0 20px;font-size:14px;color:#94a3b8;max-width:320px}
-.socials{display:flex;gap:12px}
-.socials a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:white;transition:.2s}
-.socials a:hover{background:var(--primary)}
-.footer-col h4{color:white;font-size:15px;margin-bottom:16px;font-weight:600}
-.footer-col ul{list-style:none;display:grid;gap:10px}
-.footer-col a{color:#94a3b8;font-size:14px;transition:.2s}
-.footer-col a:hover{color:white}
-.contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:14px;color:#94a3b8}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:13px;color:#64748b;flex-wrap:wrap;gap:12px}
-
-/* WhatsApp */
-.whatsapp{position:fixed;right:20px;bottom:20px;z-index:90;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:white;box-shadow:0 10px 25px rgba(37,211,102,.4);transition:.3s;animation:float 3s ease-in-out infinite}
-.whatsapp:hover{transform:scale(1.08)}
-.whatsapp svg{width:28px;height:28px}
-
-/* Animations */
-.reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}
-.reveal.active{opacity:1;transform:none}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-/* Responsive */
-@media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;gap:40px}
-  .why-grid{grid-template-columns:repeat(2,1fr)}
-  .how-steps{grid-template-columns:repeat(2,1fr)}
-  .how-steps::before{display:none}
-  .testi-grid{grid-template-columns:1fr;max-width:600px;margin:0 auto}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:768px){
-  .nav{display:none;position:absolute;top:72px;left:0;right:0;background:white;flex-direction:column;align-items:flex-start;padding:20px;border-bottom:1px solid var(--gray-100);box-shadow:var(--shadow-md);gap:16px}
-  .nav.open{display:flex}
-  .menu-toggle{display:block}
-  .nav-cta .btn-outline{display:none}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .section-head{margin-bottom:40px}
-  section{padding:70px 0}
-  .hero{padding:80px 0 60px}
-  .why-grid{grid-template-columns:1fr}
-  .how-steps{grid-template-columns:1fr;gap:32px}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowEnvy by Ivy — Your Skin, But Luminous</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blush: #FDEBF0;
+            --blush-dark: #F5D6DF;
+            --ivory: #FFFAF6;
+            --sage: #7A9277;
+            --sage-light: #E8EDE7;
+            --gold: #C8A96A;
+            --ink: #2D2A26;
+            --ink-60: #6B625C;
+        }
+        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { font-family: 'Inter', sans-serif; background: var(--ivory); color: var(--ink); }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        .glass { background: rgba(255,250,246,0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+        .shadow-soft { box-shadow: 0 10px 30px rgba(45,42,38,0.06); }
+        .shadow-hover { transition: all .3s ease; }
+        .shadow-hover:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(45,42,38,0.1); }
+        .pill { transition: all .2s; }
+        .pill-active { background: var(--ink); color: white; }
+        .no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        input[type="range"] { -webkit-appearance: none; height: 4px; background: var(--blush-dark); border-radius: 4px; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--sage); border-radius: 50%; border: 3px solid white; box-shadow: 0 1px 4px rgba(0,0,0,.2); cursor: pointer; }
+        .animate-in { animation: in .3s ease-out; } @keyframes in { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }
+    </style>
 </head>
 <body>
-
-<header class="header">
-  <div class="container nav-wrap">
-    <a href="#" class="logo">
-      <span class="logo-mark">BU</span>
-    BusinessUp HQ </a>
-    <nav class="nav" id="nav">
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#how">Process</a>
-      <a href="#testimonials">Reviews</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="#cta" class="btn btn-outline">Get Free Consultation</a>
-      <a href="#services" class="btn btn-primary">Register Now</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
+    <!-- Toast -->
+    <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 z-[100] hidden">
+        <div class="bg-[#2D2A26] text-white px-5 py-3 rounded-full shadow-lg text-sm flex items-center gap-2">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9l3 3 6-6"/></svg>
+            <span id="toast-text">Added to cart</span>
+        </div>
     </div>
-  </div>
-</header>
 
-<main>
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="container hero-grid">
-    <div class="reveal active">
-      <div class="badge"><span class="badge-dot"></span>From Business Idea to Business Success — We Handle Everything</div>
-      <h1>Start, Register & Grow Your Business in Nigeria — <span>All in One Place</span></h1>
-      <p class="lead">We handle CAC, NAFDAC, SMEDAN, Trademark Registration, Website Development, Tax Registration, Business Compliance, and much more. Trusted by entrepreneurs, startups, SMEs, manufacturers, importers, exporters, NGOs, churches, associations, and corporate organizations.</p>
-      <div class="hero-ctas">
-        <a href="#services" class="btn btn-primary">
-          Register My Business
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://wa.me/2348123456789?text=Hello%20BusinessUp%2C%20I%20need%20a%20free%20consultation" class="btn btn-outline">Get Free Consultation</a>
-      </div>
-      <div class="trust-row">
-        <div class="trust-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          CAC Accredited
-        </div>
-        <div class="trust-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          NAFDAC Consultant
-        </div>
-        <div class="trust-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          SMEDAN Partner
-        </div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="hero-card">
-        <div class="hero-card-head">
-          <b style="font-family:Poppins">Live Application Tracker</b>
-          <span class="status"><span style="width:6px;height:6px;background:currentColor;border-radius:50%"></span>Active</span>
-        </div>
-        <div class="progress-list">
-          <div class="progress">
-            <div class="progress-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <!-- Header -->
+    <header class="sticky top-0 z-40 glass border-b border-black/5">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div class="flex items-center gap-4 h-[68px]">
+                <button id="mobile-menu" class="lg:hidden p-2 -ml-2">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
+                <a href="#" class="flex items-center gap-1">
+                    <span class="serif text-[26px] leading-none tracking-tight">GlowEnvy</span>
+                    <span class="text-[11px] uppercase tracking-[0.18em] text-[#6B625C] mt-1">by Ivy</span>
+                </a>
+                
+                <div class="hidden lg:flex items-center gap-6 ml-8">
+                    <div class="relative">
+                        <button id="shop-toggle" class="flex items-center gap-1.5 text-[14px] font-medium hover:text-[#7A9277]">Shop <svg width="14" height="14" fill="none" stroke="currentColor"><path d="M4 6l4 4 4-4"/></svg></button>
+                        <div id="shop-dropdown" class="absolute top-full mt-3 left-0 w-48 bg-white rounded-2xl shadow-soft p-2 hidden animate-in border border-black/5"></div>
+                    </div>
+                    <a href="#about" class="text-[14px] font-medium hover:text-[#7A9277]">Our Story</a>
+                    <button id="quiz-header" class="text-[14px] font-medium hover:text-[#7A9277]">Skin Quiz</button>
+                </div>
+
+                <div class="hidden md:flex flex-1 max-w-[520px] mx-auto">
+                    <div class="relative w-full">
+                        <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#9A8F88]" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="8" cy="8" r="6.5"/><path d="M13 13l3.5 3.5"/></svg>
+                        <input id="search" type="search" placeholder="Search 200+ products..." class="w-full h-11 pl-10 pr-4 bg-white/70 border border-black/10 rounded-full text-[14px] focus:outline-none focus:ring-2 focus:ring-[#E8EDE7] focus:border-[#7A9277] placeholder:text-[#9A8F88]">
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-1 ml-auto">
+                    <button id="wishlist-btn" class="relative p-2.5 hover:bg-black/5 rounded-full transition">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 18.5l-6.5-6.3C2.7 10.4 2.7 7.5 4.5 5.7c1.8-1.8 4.7-1.8 6.5 0L11 5.8l.9-.9c1.8-1.8 4.7-1.8 6.5 0 1.8 1.8 4.7 0 6.5L11 18.5Z"/></svg>
+                        <span id="wish-count" class="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-[#C8A96A] text-white text-[11px] font-medium rounded-full grid place-items-center hidden">0</span>
+                    </button>
+                    <button id="cart-btn" class="relative p-2.5 hover:bg-black/5 rounded-full transition">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h2l1.5 9h9l1.5-6H6"/><circle cx="9" cy="19" r="1.25"/><circle cx="15.5" cy="19" r="1.25"/></svg>
+                        <span id="cart-count" class="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-[#2D2A26] text-white text-[11px] font-medium rounded-full grid place-items-center">0</span>
+                    </button>
+                </div>
             </div>
-            <div class="progress-text"><b>CAC Business Name Approved</b><span>Completed in 4 days</span></div>
-          </div>
-          <div class="progress">
-            <div class="progress-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="md:hidden pb-3">
+                <div class="relative">
+                    <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#9A8F88]" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="8" cy="8" r="6.5"/><path d="M13 13l3.5 3.5"/></svg>
+                    <input id="search-mobile" type="search" placeholder="Search products..." class="w-full h-10 pl-10 pr-4 bg-white border border-black/10 rounded-full text-[14px] focus:outline-none focus:ring-2 focus:ring-[#E8EDE7]">
+                </div>
             </div>
-            <div class="progress-text"><b>TIN & FIRS Registration</b><span>In progress - 24hrs</span></div>
-          </div>
-          <div class="progress">
-            <div class="progress-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3"/></svg>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-0" style="background: radial-gradient(80% 60% at 20% 20%, #FDEBF0 0%, transparent 60%), radial-gradient(70% 50% at 80% 80%, #E8EDE7 0%, transparent 60%), #FFFAF6;"></div>
+        <div class="relative max-w-[1400px] mx-auto px-4 md:px-8 py-14 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/70 border border-black/5 rounded-full text-[12px] mb-6">
+                    <span class="w-2 h-2 rounded-full bg-[#7A9277] animate-pulse"></span>
+                    Science-backed botanicals • Made in Nigeria
+                </div>
+                <h1 class="serif text-[44px] md:text-[64px] leading-[1.05] tracking-tight">Your Skin,<br>But Luminous</h1>
+                <p class="mt-5 text-[17px] leading-relaxed text-[#6B625C] max-w-[520px]">Clinically-tested formulas with niacinamide, ceramides, and African botanicals. No harsh sulfates, no fragrance overload—just calm, glowing skin.</p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="#catalog" class="px-7 h-[48px] grid place-items-center bg-[#2D2A26] text-white rounded-full font-medium hover:opacity-90 transition">Shop All</a>
+                    <button id="quiz-hero" class="px-7 h-[48px] grid place-items-center bg-white border border-black/10 rounded-full font-medium hover:bg-[#FDEBF0]/50 transition">Take Skin Quiz</button>
+                </div>
+                <div class="mt-10 flex items-center gap-6">
+                    <div class="flex -space-x-2">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="">
+                        <img src="https://images.unsplash.com/photo-1526510747491-58f928ec870f?w=80" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="">
+                    </div>
+                    <div class="text-[13px] leading-tight">
+                        <div class="flex text-[#C8A96A]">★★★★★</div>
+                        <div class="text-[#6B625C] mt-0.5">Loved by 12,000+ Nigerians</div>
+                    </div>
+                </div>
             </div>
-            <div class="progress-text"><b>Website Development</b><span>Design phase</span></div>
-          </div>
+            <div class="relative">
+                <div class="aspect-[4/3] md:aspect-[5/4] rounded-[32px] overflow-hidden shadow-soft bg-white">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9b8cab?w=1200&q=80" alt="GlowEnvy products" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white rounded-3xl p-4 shadow-soft border border-black/5 hidden md:flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-[#E8EDE7] grid place-items-center">
+                        <svg width="24" height="24" fill="none" stroke="#7A9277" stroke-width="1.5"><path d="M12 3l2.5 5 5.8-4 3.9.9 5.5L12 16l-4.9 2.2.9-5.5-4-3.9 5.5-.8L12 3z"/></svg>
+                    </div>
+                    <div>
+                        <div class="text-[12px] text-[#6B625C]">Dermatologist Tested</div>
+                        <div class="font-medium -mt-0.5">0% Fragrance Irritants</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="margin-top:20px;padding:14px;background:var(--light);border-radius:10px;font-size:13px;color:var(--primary);font-weight:600;text-align:center">
-          🇳🇬 Serving all 36 states + FCT • Bank-level security
+    </section>
+
+    <!-- Category Pills -->
+    <section class="max-w-[1400px] mx-auto px-4 md:px-8 -mt-2 md:mt-0">
+        <div id="category-pills" class="flex gap-2 overflow-x-auto no-scrollbar py-4"></div>
+    </section>
+
+    <!-- Catalog -->
+    <main id="catalog" class="max-w-[1400px] mx-auto px-4 md:px-8 py-8 md:py-12">
+        <div class="flex lg:gap-10">
+            <!-- Filters Sidebar -->
+            <aside id="filters" class="hidden lg:block w-[260px] shrink-0">
+                <div class="sticky top-[88px] bg-white rounded-[28px] border border-black/5 p-5 shadow-soft max-h-[calc(100vh-110px)] overflow-auto">
+                    <div class="flex items-center justify-between">
+                        <h3 class="serif text-[20px]">Filters</h3>
+                        <button id="clear-filters" class="text-[12px] text-[#7A9277] hover:underline">Clear</button>
+                    </div>
+                    
+                    <div class="mt-5 space-y-6">
+                        <div>
+                            <p class="text-[13px] font-medium mb-2">Category</p>
+                            <div id="filter-categories" class="space-y-2 text-[14px]"></div>
+                        </div>
+                        <div>
+                            <p class="text-[13px] font-medium mb-2">Skin Type</p>
+                            <div id="filter-skin" class="space-y-2 text-[14px]"></div>
+                        </div>
+                        <div>
+                            <p class="text-[13px] font-medium mb-2">Price</p>
+                            <input id="price-range" type="range" min="4500" max="28000" step="500" value="28000" class="w-full">
+                            <div class="flex justify-between text-[12px] text-[#6B625C] mt-1"><span>₦4,500</span><span id="price-value">₦28,000</span></div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2 text-[14px] cursor-pointer"><input type="checkbox" id="filter-bestseller" class="accent-[#7A9277]"> Bestsellers</label>
+                            <label class="flex items-center gap-2 text-[14px] cursor-pointer"><input type="checkbox" id="filter-new" class="accent-[#7A9277]"> New In</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Products -->
+            <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-3 justify-between mb-5">
+                    <div class="flex items-center gap-3">
+                        <button id="open-filters" class="lg:hidden h-10 px-4 bg-white border border-black/10 rounded-full text-[13px] font-medium flex items-center gap-1.5">
+                            <svg width="16" height="16" fill="none" stroke="currentColor"><path d="M4 6h12M6 10h8M8 14h4"/></svg> Filters
+                        </button>
+                        <p id="showing" class="text-[13px] text-[#6B625C]">Showing 1-12 of 200</p>
+                    </div>
+                    <select id="sort" class="h-10 pl-3 pr-8 bg-white border border-black/10 rounded-full text-[13px] focus:outline-none">
+                        <option value="best">Best Selling</option>
+                        <option value="new">Newest</option>
+                        <option value="rated">Top Rated</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                    </select>
+                </div>
+
+                <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5"></div>
+
+                <div id="pagination" class="flex items-center justify-center gap-2 mt-10"></div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </main>
 
-<!-- TRUST -->
-<section class="stats" id="trust">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-card reveal">
-        <div class="stat-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1"/></svg>
+    <!-- Features -->
+    <section class="bg-white border-y border-black/5">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+            <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-2xl bg-[#E8EDE7] grid place-items-center shrink-0"><svg width="20" height="20" fill="none" stroke="#7A9277"><path d="M5 12l3 3 7-7"/></svg></div><div><p class="font-medium">Clean Ingredients</p><p class="text-[13px] text-[#6B625C]">No parabens, no sulfates</p></div></div>
+            <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-2xl bg-[#FDEBF0] grid place-items-center shrink-0"><svg width="20" height="20" fill="none" stroke="#C8A96A"><circle cx="10" cy="10" r="7.5"/></svg></div><div><p class="font-medium">Dermatologist Tested</p><p class="text-[13px] text-[#6B625C]">Safe for sensitive skin</p></div></div>
+            <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-2xl bg-[#E8EDE7] grid place-items-center shrink-0"><svg width="20" height="20" fill="none" stroke="#7A9277"><path d="M10 3v14M3 10h14"/></svg></div><div><p class="font-medium">Cruelty Free</p><p class="text-[13px] text-[#6B625C]">Never tested on animals</p></div></div>
+            <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-2xl bg-[#FDEBF0] grid place-items-center shrink-0"><span class="text-[18px]">🇳🇬</span></div><div><p class="font-medium">Made in Nigeria</p><p class="text-[13px] text-[#6B625C]">Lagos formulated</p></div></div>
         </div>
-        <div class="stat-num">5,000+</div>
-        <div class="stat-label">Businesses Registered</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21l8-10"/></svg>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="max-w-[1400px] mx-auto px-4 md:px-8 py-16">
+        <div class="flex items-end justify-between mb-8">
+            <h2 class="serif text-[32px] md:text-[40px] leading-tight">Real results, real glow</h2>
+            <div class="flex gap-2">
+                <button id="test-prev" class="w-10 h-10 rounded-full border border-black/10 grid place-items-center hover:bg-black/5">‹</button>
+                <button id="test-next" class="w-10 h-10 rounded-full border border-black/10 grid place-items-center hover:bg-black/5">›</button>
+            </div>
         </div>
-        <div class="stat-num">1,000+</div>
-        <div class="stat-label">Websites Designed</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <div class="overflow-hidden">
+            <div id="test-track" class="flex transition-transform duration-500"></div>
         </div>
-        <div class="stat-num">98%</div>
-        <div class="stat-label">Customer Satisfaction</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    </section>
+
+    <!-- About Ivy -->
+    <section id="about" class="bg-[#FDEBF0]/40">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8 py-16 grid lg:grid-cols-2 gap-10 items-center">
+            <div class="order-2 lg:order-1">
+                <span class="text-[12px] uppercase tracking-widest text-[#7A9277] font-medium">Our Story</span>
+                <h3 class="serif text-[32px] md:text-[44px] mt-2 leading-tight">Hello, I'm Ivy</h3>
+                <p class="mt-4 text-[16px] leading-relaxed text-[#4A453F]">After years of battling hyperpigmentation in Lagos humidity, I couldn't find gentle, effective products made for melanin-rich skin. I teamed up with Nigerian cosmetic chemists to create GlowEnvy—science-backed botanicals, clinical actives at the right percentages, and textures that love our climate.</p>
+                <p class="mt-3 text-[16px] leading-relaxed text-[#4A453F]">No bleaching. No false promises. Just barrier-first skincare that makes you want to skip foundation.</p>
+                <div class="mt-6 flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" class="w-12 h-12 rounded-full object-cover" alt="Ivy">
+                    <div><p class="font-medium leading-tight">Ivy Adebayo</p><p class="text-[13px] text-[#6B625C]">Founder & Formulator</p></div>
+                </div>
+            <div class="order-1 lg:order-2">
+                <div class="aspect-[4/5] max-w-[480px] ml-auto rounded-[32px] overflow-hidden shadow-soft">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1000&q=80" class="w-full h-full object-cover" alt="Ivy">
+                </div>
+            </div>
         </div>
-        <div class="stat-num">36+1</div>
-        <div class="stat-label">Nationwide Coverage</div>
-      </div>
-    <div class="logos">
-      <div class="logo-pill">Flutterwave</div>
-      <div class="logo-pill">Paystack</div>
-      <div class="logo-pill">Nigerian SMEs</div>
-      <div class="logo-pill">Manufacturers</div>
-      <div class="logo-pill">Importers & Exporters</div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">One-Stop Shop</span>
-      <h2>Everything to Launch & Scale in Nigeria</h2>
-      <p>From CAC to NAFDAC to your website — we handle the paperwork, compliance, and digital presence so you can focus on growth.</p>
-    </div>
+    <!-- Newsletter -->
+    <section class="max-w-[900px] mx-auto px-4 md:px-8 py-16 text-center">
+        <h3 class="serif text-[30px] md:text-[38px]">Get the glow guide</h3>
+        <p class="text-[#6B625C] mt-2">Join 20k+ and get 10% off your first order + skincare tips for Nigerian weather.</p>
+        <form id="newsletter" class="mt-6 flex flex-col sm:flex-row gap-2 max-w-[520px] mx-auto">
+            <input type="email" required placeholder="Your email" class="flex-1 h-12 px-4 bg-white border border-black/10 rounded-full focus:outline-none focus:ring-2 focus:ring-[#E8EDE7]">
+            <button class="h-12 px-7 bg-[#2D2A26] text-white rounded-full font-medium hover:opacity-90">Subscribe</button>
+        </form>
+        <p id="news-msg" class="text-[13px] text-[#7A9277] mt-2 hidden">Thanks! Check your email for 10% off.</p>
+    </section>
 
-    <div class="services-tabs reveal">
-      <button class="tab-btn active" data-tab="tab-business">Business Registration</button>
-      <button class="tab-btn" data-tab="tab-regulatory">Regulatory Compliance</button>
-      <button class="tab-btn" data-tab="tab-sme">SME Support</button>
-      <button class="tab-btn" data-tab="tab-digital">Digital Services</button>
-      <button class="tab-btn" data-tab="tab-corporate">Corporate</button>
-    </div>
-
-    <div id="tab-business" class="tab-panel active">
-      <div class="services-grid">
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/></svg></div><div><h4>CAC Business Name Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div><h4>CAC Limited Company Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div><div><h4>NGO Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><div><h4>Incorporated Trustees</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div><h4>Business Name Reservation</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div><div><h4>Annual Returns Filing</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17v-2m3 2v-4m3 4v-6M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2h-4"/></svg></div><div><h4>Company Status Reports</h4><span class="learn">Learn More →</span></div></div>
-      </div>
-    </div>
-
-    <div id="tab-regulatory" class="tab-panel">
-      <div class="services-grid">
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4>NAFDAC Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>SONCAP Certification</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>SON Certification</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2-2m2 2l2-2m-2 2v-9m7 7v4a2 2 0 01-2 2H7a2 2 0 01-2-2v-4"/></svg></div><div><h4>Trademark Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></svg></div><div><h4>Copyright Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 0 005 15.4a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09c0 .66.39 1.26 1 1.51.6.25 1.31.12 1.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06c-.45.51-.58 1.22-.33 1.82.25.6.85 1 1.51 1H21a2 2 0 010 4h-.09c-.66 0-1.26.39-1.51 1z"/></svg></div><div><h4>Patent Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H4m16-6H10"/></svg></div><div><h4>Product Approval Services</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div><h4>Import & Export Documentation</h4><span class="learn">Learn More →</span></div></div>
-      </div>
-    </div>
-
-    <div id="tab-sme" class="tab-panel">
-      <div class="services-grid">
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/></svg></div><div><h4>SMEDAN Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div><div><h4>Tax Identification Number (TIN)</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/></svg></div><div><h4>FIRS Registration</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20V10M18 20V4"/></svg></div><div><h4>Business Advisory Services</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3"/></svg></div><div><h4>Startup Consulting</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16c0 1.1.9 2 2 2h12a2 2 0 002-2V8l-6-6z"/></svg></div><div><h4>Business Plan Development</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.39 0 4.56.93 6.17 2.44"/></svg></div><div><h4>Grant Application Support</h4><span class="learn">Learn More →</span></div></div>
-      </div>
-    </div>
-
-    <div id="tab-digital" class="tab-panel">
-      <div class="services-grid">
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div><div><h4>Professional Website Design</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z"/></svg></div><div><h4>E-commerce Website Development</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Landing Page Design</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/></svg></div><div><h4>Mobile App Development</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94"/></svg></div><div><h4>Logo Design</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></div><div><h4>Brand Identity Design</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div><div><h4>Graphic Design</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35"/></svg></div><div><h4>SEO Optimization</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/></svg></div><div><h4>Google Business Profile Setup</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div><div><h4>Social Media Management</h4><span class="learn">Learn More →</span></div></div>
-      </div>
-    </div>
-
-    <div id="tab-corporate" class="tab-panel">
-      <div class="services-grid">
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div><div><h4>Corporate Documentation</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Compliance Monitoring</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/></svg></div><div><h4>Company Secretarial Services</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20V10M18 20V4"/></svg></div><div><h4>Business Consulting</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div><h4>Staff Training</h4><span class="learn">Learn More →</span></div></div>
-        <div class="service-card"><div class="s-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0110 10c0 5.5-4.5 10-10 10"/></svg></div><div><h4>Digital Transformation Services</h4><span class="learn">Learn More →</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="why" id="why">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Why BusinessUp</span>
-      <h2>Built for Nigerian Entrepreneurs</h2>
-      <p>We combine CAC accreditation, regulatory expertise, and modern tech to make business formalization fast and stress-free.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-        <h3>Fast Processing</h3>
-        <p>Get CAC in 3-7 days. We pre-vet names, prepare documents correctly, and follow up daily with agencies.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-        <h3>Expert Support</h3>
-        <p>Dedicated account manager via WhatsApp. Real humans, not bots. We guide you at every step.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 0 010 7H6"/></svg></div>
-        <h3>Affordable Pricing</h3>
-        <p>Transparent, no hidden fees. Pay in naira, get official receipts. Bundle services and save more.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-        <h3>Secure Documentation</h3>
-        <p>Bank-level data protection. Your CAC certificates, TIN, and brand files stored securely in your portal.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg></div>
-        <h3>Transparent Process</h3>
-        <p>Real-time tracking portal. See exactly where your application is with CAC, NAFDAC, or SON.</p>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/></svg></div>
-        <h3>Nationwide Coverage</h3>
-        <p>Serving all 36 states + FCT remotely. Lagos, Abuja, Port Harcourt, Kano, Ibadan — we’re everywhere.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW -->
-<section id="how">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">How It Works</span>
-      <h2>From Idea to Approved in 4 Simple Steps</h2>
-    </div>
-    <div class="how-steps">
-      <div class="step reveal">
-        <div class="step-num">1</div>
-        <h4>Choose Service</h4>
-        <p>Select CAC, NAFDAC, website, or bundle. Get instant quote on WhatsApp.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">2</div>
-        <h4>Submit Documents</h4>
-        <p>Send via WhatsApp/email. We review and prepare everything for you.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">3</div>
-        <h4>We Process Everything</h4>
-        <p>Our accredited agents handle CAC, NAFDAC, SON, FIRS, etc. daily follow-up.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">4</div>
-        <h4>Receive Approval</h4>
-        <p>Get your certificates, TIN, and website live. 100% delivered to your portal.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="testimonials">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow" style="color:#6ee7b7">Trusted by 5,000+ Founders</span>
-      <h2>Real Nigerian Business Stories</h2>
-      <p>Entrepreneurs across fashion, food, tech, and importation choose BusinessUp.</p>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"BusinessUp registered my CAC and built my e-commerce site in 2 weeks. One team, zero stress. I was selling online before my certificate even arrived."</p>
-        <div class="author">
-          <div class="avatar">AM</div>
-          <div class="author-info"><b>Adeola M.</b><span>Lagos Fashion Brand</span></div>
+    <!-- Footer -->
+    <footer class="bg-[#2D2A26] text-[#E8DDD2]">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8 py-14 grid md:grid-cols-4 gap-10">
+            <div>
+                <div class="flex items-baseline gap-1"><span class="serif text-[26px] text-white">GlowEnvy</span><span class="text-[11px] uppercase tracking-[0.18em]">by Ivy</span></div>
+                <p class="mt-3 text-[14px] leading-relaxed text-[#C3B8AE]">Science-backed botanicals for luminous, healthy skin. Proudly Nigerian.</p>
+                <div class="flex gap-3 mt-5">
+                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-white/20">@</a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-white/20">in</a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-white/20">✕</a>
+                </div>
+            </div>
+            <div><p class="font-medium text-white mb-3">Shop</p><ul class="space-y-2 text-[14px] text-[#C3B8AE]"><li><a href="#">Serums</a></li><li><a href="#">Moisturizers</a></li><li><a href="#">Sunscreens</a></li><li><a href="#">Body Care</a></li></ul></div>
+            <div><p class="font-medium text-white mb-3">Help</p><ul class="space-y-2 text-[14px] text-[#C3B8AE]"><li><a href="#">Shipping & Returns</a></li><li><a href="#">Track Order</a></li><li><a href="#">FAQs</a></li><li><a href="#">Contact</a></li></ul></div>
+            <div><p class="font-medium text-white mb-3">Contact</p><ul class="space-y-2 text-[14px] text-[#C3B8AE]"><li>hello@glowenvy.ng</li><li>+234 801 234 5678</li><li>Lagos, Nigeria</li><li class="pt-2">Instagram: <a href="#" class="text-white hover:underline">@glowenvybyivy</a></li></ul></div>
         </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"NAFDAC and SONCAP used to take months. They handled everything in 4 weeks. My skincare products are now in Shoprite nationwide."</p>
-        <div class="author">
-          <div class="avatar">CO</div>
-          <div class="author-info"><b>Chinedu O.</b><span>Abuja Importer</span></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"From SMEDAN to TIN to website – they truly are one-stop. My grant application was approved because my documentation was perfect."</p>
-        <div class="author">
-          <div class="avatar">FS</div>
-          <div class="author-info"><b>Fatima S.</b><span>Kano SME</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="border-t border-white/10"><div class="max-w-[1400px] mx-auto px-4 md:px-8 py-5 text-[12px] text-[#9A8F88] flex justify-between"><span>© 2025 GlowEnvy by Ivy</span><span>Made with ♡ By Tobbyhq</span></div></div>
+    </footer>
 
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>Common Questions from Founders</h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item reveal">
-        <button class="faq-q">How long does CAC registration take? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-        <div class="faq-a"><p>Business Name: typically 3-5 working days after name approval. Limited Company (LTD): 5-7 working days. NGO/Incorporated Trustees: 21-28 days. Timelines depend on CAC, but we expedite and follow up daily.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">What's the difference between Business Name and Limited Company? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-        <div class="faq-a"><p>Business Name is for sole proprietors/partnerships – simpler, cheaper, but you have unlimited liability. Limited Company (LTD) is a separate legal entity, offers limited liability, can own property, raise investment, and is preferred by banks, corporates, and for international trade.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Do you handle NAFDAC for food and cosmetics? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-        <div class="faq-a"><p>Yes. We handle full NAFDAC registration for food, drinks, cosmetics, packaged water, supplements, medical devices, and chemicals – including documentation, lab analysis coordination, and factory inspection support.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Can you help with trademark registration in Nigeria? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-        <div class="faq-a"><p>Absolutely. We conduct availability search, file with the Trademarks, Patents & Designs Registry, monitor acceptance, handle journal publication, and secure your certificate (usually 6-12 months).</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Is SMEDAN registration free? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-        <div class="faq-a"><p>The SMEDAN certificate is free from the government. We charge a small service fee for correctly filling the forms, uploading documents, and ensuring fast approval – usually within 24-48 hours.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Do you build websites for businesses outside Lagos? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-        <div class="faq-a"><p>Yes! We serve all 36 states + FCT 100% remotely via WhatsApp and Zoom. We've built 1,000+ sites for clients in Abuja, PH, Kano, Ibadan, Enugu, and diaspora Nigerians.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">What documents do I need to start? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-        <div class="faq-a"><p>For CAC Business Name: Valid ID (NIN, Passport), passport photo, business address, 2 proposed names. For LTD: Directors' details, shareholder info, ID, and address. We send a simple checklist after your free consultation.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">How do I track my application? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-        <div class="faq-a"><p>You get a dedicated account manager and access to our client portal with real-time status updates. We also send WhatsApp and email notifications at every milestone – name approval, payment, filing, and certificate issuance.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Cart Drawer -->
+    <div id="cart-backdrop" class="fixed inset-0 bg-black/40 z-50 hidden"></div>
+    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-[420px] bg-[#FFFAF6] z-50 translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+        <div class="h-[68px] flex items-center justify-between px-5 border-b border-black/5 shrink-0">
+            <h3 class="serif text-[22px]">Your Bag</h3>
+            <button id="close-cart" class="w-9 h-9 grid place-items-center rounded-full hover:bg-black/5">✕</button>
+        </div>
+        <div id="cart-items" class="flex-1 overflow-auto p-5 space-y-4"></div>
+        <div class="border-t border-black/5 p-5 bg-white/70 backdrop-blur">
+            <div class="flex justify-between text-[14px] mb-1"><span class="text-[#6B625C]">Subtotal</span><span id="cart-subtotal" class="font-medium">₦0</span></div>
+            <p class="text-[12px] text-[#6B625C] mb-4">Shipping calculated at checkout</p>
+            <button id="checkout" class="w-full h-12 bg-[#2D2A26] text-white rounded-full font-medium hover:opacity-90">Checkout</button>
+            <button id="keep-shopping" class="w-full h-11 mt-2 text-[14px] hover:underline">Continue Shopping</button>
+        </div>
+    </aside>
 
-<!-- FINAL CTA -->
-<section class="cta-final" id="cta">
-  <div class="container reveal">
-    <h2>Ready to Launch Your Business?</h2>
-    <p>Let BusinessUp Nigeria handle the paperwork while you focus on growth.</p>
-    <div class="cta-btns">
-      <a href="https://wa.me/2348123456789?text=I%20want%20to%20start%20registration%20now" class="btn btn-white">Start Registration Now</a>
-      <a href="https://wa.me/2348123456789" class="btn btn-outline" style="border-color:white;color:white">Chat on WhatsApp</a>
-    </div>
-    <div style="margin-top:28px;font-size:14px;opacity:.9">Abeokuta, Ogun State | hello@businessup.ng | +234 800 BUSINESSUP</div>
-  </div>
-</section>
-</main>
+    <!-- Product Modal -->
+    <div id="product-modal" class="fixed inset-0 z-[60] hidden">
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 max-w-[1100px] mx-auto my-6 md:my-12 bg-[#FFFAF6] rounded-[28px] shadow-2xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
+            <button id="close-modal" class="absolute top-3 right-3 z-20 w-9 h-9 bg-white/90 rounded-full grid place-items-center shadow">✕</button>
+            <div class="md:w-[52%] bg-white p-4 md:p-6">
+                <div class="aspect-square rounded-2xl overflow-hidden bg-[#FFFAF6]"><img id="modal-img" src="" class="w-full h-full object-cover" alt=""></div>
+                <div id="modal-thumbs" class="grid grid-cols-4 gap-2 mt-2"></div>
+            </div>
+            <div class="md:w-[48%] p-6 md:p-8 overflow-auto">
+                <span class="text-[11px] uppercase tracking-widest text-[#7A9277]">GlowEnvy</span>
+                <h3 id="modal-name" class="serif text-[28px] leading-tight mt-1"></h3>
+                <div class="flex items-center gap-2 mt-2"><div id="modal-stars" class="text-[#C8A96A] text-[14px]"></div><span id="modal-reviews" class="text-[12px] text-[#6B625C]"></span></div>
+                <p id="modal-price" class="text-[22px] font-medium mt-3"></p>
+                <p id="modal-desc" class="text-[14px] leading-relaxed text-[#4A453F] mt-4"></p>
+                
+                <div class="mt-6">
+                    <p class="text-[13px] font-medium mb-2">Skin Types</p>
+                    <div id="modal-skin" class="flex flex-wrap gap-1.5"></div>
+                </div>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="logo" style="color:white"><span class="logo-mark">BU</span>BusinessUp Nigeria</a>
-        <p>From Business Idea to Business Success — We Handle Everything. CAC accredited consultants for registration, compliance, and digital growth.</p>
-        <div class="socials">
-          <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.8c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.2 1.7-2.1-.8.5-1.6.8-2.5 1A3.9 3.9 0 0012 9c0 .3 0 .6.1.9-3.2-.2-6-1.7-7.9-4a4 4 0 001.2 5.2c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.3 3.5 3.1 3.9-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.5 1.9 2.6 3.5 2.6A7.8 7.8 0 012 19.5 11 11 0 008 21c7.2 0 11.2-6 11.2-11.2v-.5c.8-.6 1.4-1.3 1.8-2.1z"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.3-2.6 4.8-2.6 5.1 0 6 3.4 6 7.7V24h-5V16.4c0-1.8 0-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4V24h-5V8z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-        </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">CAC Registration</a></li>
-          <li><a href="#services">NAFDAC & SON</a></li>
-          <li><a href="#services">Trademark</a></li>
-          <li><a href="#services">SMEDAN & TIN</a></li>
-          <li><a href="#services">Website Design</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#why">Why Choose Us</a></li>
-          <li><a href="#how">Our Process</a></li>
-          <li><a href="#testimonials">Success Stories</a></li>
-          <li><a href="#faq">FAQs</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <div class="contact-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/></svg>
-          <span>Abeokuta, Ogun State. Serving all Nigeria</span>
-        </div>
-        <div class="contact-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-          <span>hello@businessup.ng</span>
-        </div>
-        <div class="contact-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.3 1.77.57 2.61a2 2 0 01-.45 2.11L8 9a16 16 0 006 6l.55-1.23a2 2 0 012.11-.45c.84.27 1.71.45 2.61.57A2 2 0 0122 16.92z"/></svg>
-          <span>+234 812 345 6789</span>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 BusinessUp Nigeria. All rights reserved. CAC Accredited Agent.</span>
-      <span>Built with 🇳🇬 for Nigerian Entrepreneurs</span>
-    </div>
-  </div>
-</footer>
+                <div class="mt-6 flex items-center gap-3">
+                    <div class="flex items-center border border-black/10 rounded-full">
+                        <button id="qty-minus" class="w-10 h-10 grid place-items-center">−</button>
+                        <span id="qty" class="w-8 text-center">1</span>
+                        <button id="qty-plus" class="w-10 h-10 grid place-items-center">+</button>
+                    </div>
+                    <button id="modal-add" class="flex-1 h-11 bg-[#2D2A26] text-white rounded-full font-medium">Add to Bag</button>
+                </div>
 
-<a href="https://wa.me/2348123456789?text=Hello%20BusinessUp" class="whatsapp" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M19.1 17.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.2c-.2.2-.3.2-.6.1s-1.2-.4-2.2-1.4c-.8-.7-1.4-1.6-1.5-1.9s0-.4.1-.5c.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5s0-.4 0-.6c0-.2-.7-1.7-.9-2.3-.2-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3c.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 27l6.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3z"/></svg>
-</a>
+                <div class="mt-8 space-y-4 text-[14px]">
+                    <details class="group"><summary class="flex justify-between cursor-pointer font-medium">Ingredients <span class="group-open:rotate-180 transition">⌄</span></summary><p id="modal-ing" class="mt-2 text-[#4A453F] text-[13px] leading-relaxed"></p></details>
+                    <details class="group"><summary class="flex justify-between cursor-pointer font-medium">How to use <span class="group-open:rotate-180 transition">⌄</span></summary><p id="modal-use" class="mt-2 text-[#4A453F] text-[13px] leading-relaxed"></p></details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="fixed inset-0 z-[70] hidden">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 max-w-[560px] mx-auto my-12 bg-white rounded-[28px] shadow-2xl p-7 md:p-9">
+            <button id="close-quiz" class="absolute top-3 right-3 w-9 h-9 grid place-items-center hover:bg-black/5 rounded-full">✕</button>
+            <h3 class="serif text-[28px]">Find your routine</h3>
+            <p class="text-[14px] text-[#6B625C] mt-1">3 quick questions, dermatologist-backed picks.</p>
+            <div id="quiz-steps" class="mt-6"></div>
+        </div>
+    </div>
+
+    <!-- Mobile Filters -->
+    <div id="mobile-filters" class="fixed inset-0 z-50 hidden lg:hidden">
+        <div id="mf-backdrop" class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute bottom-0 left-0 right-0 bg-[#FFFAF6] rounded-t-[28px] p-5 max-h-[85vh] overflow-auto">
+            <div class="w-12 h-1.5 bg-black/10 rounded-full mx-auto mb-4"></div>
+            <div id="mf-content"></div>
+            <button id="mf-apply" class="w-full h-12 mt-4 bg-[#2D2A26] text-white rounded-full font-medium">Apply Filters</button>
+        </div>
+    </div>
 
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const toggle=document.getElementById('menuToggle');
-  const nav=document.getElementById('nav');
-  toggle.addEventListener('click',()=>nav.classList.toggle('open'));
+const categories = ['Cleansers','Toners','Serums','Moisturizers','Sunscreens','Masks','Oils','Body Care'];
+const skinTypes = ['oily','dry','combination','sensitive'];
+const ingredients = ['Niacinamide','Hyaluronic Acid','Vitamin C','Retinol','Ceramide','Green Tea','Snail Mucin','Peptide','Salicylic Acid','AHA BHA','Rice Water','Centella','Bakuchiol','Squalane','Moringa','Hibiscus','Baobab','Kojic Acid','Tranexamic','Azelaic'];
+const nameMap = {
+  Cleansers:['Gel Cleanser','Foam Cleanser','Cream Cleanser','Oil Cleanser','Micellar Water'],
+  Toners:['Hydrating Toner','Exfoliating Toner','Essence Toner','Mist'],
+  Serums:['Glow Serum','Brightening Serum','Repair Serum','Hydration Boost','Acne Serum'],
+  Moisturizers:['Barrier Cream','Gel Moisturizer','Water Cream','Daily Lotion','Rich Cream'],
+  Sunscreens:['SPF 50 Fluid','Matte Sunscreen','Glow SPF','Mineral SPF'],
+  Masks:['Clay Mask','Sleeping Mask',' Sheet Mask','Peel Mask'],
+  Oils:['Face Oil','Botanical Oil','Cleansing Oil'],
+  'Body Care':['Body Lotion','Body Butter','Body Scrub','Hand Cream']
+};
+const images = [
+  'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800',
+  'https://images.unsplash.com/photo-1598440947619-2c35fc9b8cab?w=800',
+  'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800',
+  'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800',
+  'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800',
+  'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800',
+  'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800',
+  'https://images.unsplash.com/photo-1617897903246-719242758050?w=800'
+];
 
-  const tabs=document.querySelectorAll('.tab-btn');
-  const panels=document.querySelectorAll('.tab-panel');
-  tabs.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      tabs.forEach(b=>b.classList.remove('active'));
-      panels.forEach(p=>p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    })
-  });
+function generateProducts(){
+  const products = [];
+  for(let i=1;i<=200;i++){
+    const cat = categories[Math.floor(Math.random()*categories.length)];
+    const ing = ingredients[Math.floor(Math.random()*ingredients.length)];
+    const type = nameMap[cat][Math.floor(Math.random()*nameMap[cat].length)];
+    const name = `${ing} ${type}`;
+    const price = Math.floor(Math.random()*(28000-4500+1)/500)*500 + 4500;
+    const rating = (Math.random()*1.5 + 3.5).toFixed(1);
+    const reviews = Math.floor(Math.random()*1200)+20;
+    const skins = [...new Set(Array.from({length: Math.random()>0.6?2:1}, ()=>skinTypes[Math.floor(Math.random()*4)]))];
+    const img = images[(i+cat.length)%images.length] + `&q=80&auto=format&fit=crop`;
+    products.push({
+      id:i, name, category:cat, price, rating: +rating, reviews,
+      skinTypes: skins, image: img,
+      bestseller: i%7===0, isNew: i%11===0,
+      description: `A ${cat.toLowerCase()} powered by ${ing.toLowerCase()} to visibly improve texture and restore glow. Formulated for Nigerian humidity, lightweight and non-comedogenic.`,
+      ingredients: `${ing}, Aqua, Glycerin, Pentylene Glycol, Ceramide NP, Panthenol, Allantoin, Tocopherol, Moringa Oleifera Seed Oil, Hibiscus Sabdariffa Extract`,
+      howToUse: cat==='Sunscreens' ? 'Apply generously as last step AM. Reapply every 2 hours.' : cat==='Cleansers' ? 'Massage onto damp skin AM/PM, rinse.' : 'Apply 2-3 drops to clean skin AM/PM, follow with moisturizer.'
+    });
+  }
+  return products;
+}
 
-  document.querySelectorAll('.faq-q').forEach(q=>{
-    q.addEventListener('click',()=>{
-      const item=q.parentElement;
-      const open=item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-      if(!open) item.classList.add('open');
-    })
-  });
+const state = {
+  products: generateProducts(),
+  filtered: [],
+  page:1, perPage:12,
+  cart: JSON.parse(localStorage.getItem('ge_cart')||'[]'),
+  wishlist: JSON.parse(localStorage.getItem('ge_wishlist')||'[]'),
+  filters:{ categories:new Set(), skin:new Set(), price:28000, best:false, new:false },
+  sort:'best',
+  search:''
+};
 
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');io.unobserve(e.target)}})
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const NGN = n => '₦' + n.toLocaleString('en-NG');
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
 
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href');
-      if(id.length>1){e.preventDefault();document.querySelector(id)?.scrollIntoView({behavior:'smooth'});nav.classList.remove('open')}
-    })
-  });
+function toast(msg){ $('#toast-text').textContent = msg; const t=$('#toast'); t.classList.remove('hidden'); setTimeout(()=>t.classList.add('hidden'),1800); }
 
-  const hdr=document.querySelector('.header');
-  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>8));
-});
+function save(){ localStorage.setItem('ge_cart', JSON.stringify(state.cart)); localStorage.setItem('ge_wishlist', JSON.stringify(state.wishlist)); updateCounts(); }
+function updateCounts(){ $('#cart-count').textContent = state.cart.reduce((a,b)=>a+b.qty,0); const wc=$('#wish-count'); wc.textContent = state.wishlist.length; wc.classList.toggle('hidden', state.wishlist.length===0); }
+
+// Render Category Pills
+function renderPills(){
+  const wrap = $('#category-pills');
+  wrap.innerHTML = `<button data-cat="" class="pill pill-active whitespace-nowrap px-4 h-9 rounded-full border border-black/10 text-[13px]">All</button>` + categories.map(c=>`<button data-cat="${c}" class="pill whitespace-nowrap px-4 h-9 rounded-full border border-black/10 text-[13px] hover:bg-black/5">${c}</button>`).join('');
+  wrap.onclick = e => { const b=e.target.closest('button'); if(!b) return; $$('#category-pills .pill').forEach(p=>p.classList.remove('pill-active')); b.classList.add('pill-active'); state.filters.categories = b.dataset.cat ? new Set([b.dataset.cat]) : new Set(); state.page=1; apply(); window.scrollTo({top: $('#catalog').offsetTop-80, behavior:'smooth'}); };
+}
+
+// Filters UI
+function renderFilterOptions(){
+  $('#filter-categories').innerHTML = categories.map(c=>`<label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" value="${c}" class="cat-check accent-[#7A9277]"> ${c}</label>`).join('');
+  $('#filter-skin').innerHTML = skinTypes.map(s=>`<label class="flex items-center gap-2 cursor-pointer capitalize"><input type="checkbox" value="${s}" class="skin-check accent-[#7A9277]"> ${s}</label>`).join('');
+  $$('.cat-check').forEach(cb=>cb.onchange=()=>{ cb.checked?state.filters.categories.add(cb.value):state.filters.categories.delete(cb.value); state.page=1; apply(); });
+  $$('.skin-check').forEach(cb=>cb.onchange=()=>{ cb.checked?state.filters.skin.add(cb.value):state.filters.skin.delete(cb.value); state.page=1; apply(); });
+  $('#filter-bestseller').onchange = e=>{ state.filters.best = e.target.checked; apply(); };
+  $('#filter-new').onchange = e=>{ state.filters.new = e.target.checked; apply(); };
+  $('#price-range').oninput = e=>{ state.filters.price = +e.target.value; $('#price-value').textContent = NGN(state.filters.price); apply(); };
+  $('#clear-filters').onclick = ()=>{ state.filters={categories:new Set(), skin:new Set(), price:28000, best:false, new:false}; $$('input[type=checkbox]').forEach(i=>i.checked=false); $('#price-range').value=28000; $('#price-value').textContent=NGN(28000); apply(); };
+}
+
+// Apply filters
+function apply(){
+  let list = [...state.products];
+  const q = state.search.toLowerCase();
+  if(q) list = list.filter(p=> p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
+  if(state.filters.categories.size) list = list.filter(p=> state.filters.categories.has(p.category));
+  if(state.filters.skin.size) list = list.filter(p=> p.skinTypes.some(s=>state.filters.skin.has(s)));
+  list = list.filter(p=> p.price <= state.filters.price);
+  if(state.filters.best) list = list.filter(p=>p.bestseller);
+  if(state.filters.new) list = list.filter(p=>p.isNew);
+  switch(state.sort){
+    case 'low': list.sort((a,b)=>a.price-b.price); break;
+    case 'high': list.sort((a,b)=>b.price-a.price); break;
+    case 'rated': list.sort((a,b)=>b.rating-a.rating); break;
+    case 'new': list.sort((a,b)=> (b.isNew-a.isNew) || b.id-a.id); break;
+    default: list.sort((a,b)=> (b.bestseller-a.bestseller) || b.rating-a.rating);
+  }
+  state.filtered = list;
+  renderProducts();
+}
+
+function renderProducts(){
+  const grid = $('#product-grid');
+  const start = (state.page-1)*state.perPage;
+  const items = state.filtered.slice(start, start+state.perPage);
+  $('#showing').textContent = `Showing ${state.filtered.length? start+1:0}-${Math.min(start+state.perPage, state.filtered.length)} of ${state.filtered.length}`;
+  grid.innerHTML = items.map(p=>`
+    <article class="group bg-white rounded-[24px] border border-black/5 shadow-soft shadow-hover overflow-hidden flex flex-col">
+      <div class="relative aspect-square bg-[#FFFAF6] overflow-hidden">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500">
+        <button data-wish="${p.id}" class="absolute top-2.5 right-2.5 w-8 h-8 grid place-items-center bg-white/90 backdrop-blur rounded-full shadow hover:bg-white ${state.wishlist.includes(p.id)?'text-[#C8A96A]':''}">
+          <svg width="18" height="18" fill="${state.wishlist.includes(p.id)?'currentColor':'none'}" stroke="currentColor" stroke-width="1.5"><path d="M9 15l-5.2-5C2.3 8.5 2.3 6 3.8 4.5c1.5-1.5 3.9-1.5 5.4 0l.8.8.8-.8c1.5-1.5 3.9-1.5 5.4 0 1.5 1.5 1.5 4 0 5.5L9 15z"/></svg>
+        </button>
+        ${p.bestseller?'<span class="absolute top-2.5 left-2.5 px-2.5 py-1 text-[11px] font-medium bg-[#2D2A26] text-white rounded-full">Bestseller</span>':''}
+        ${p.isNew?'<span class="absolute top-2.5 left-2.5 px-2.5 py-1 text-[11px] font-medium bg-[#7A9277] text-white rounded-full">New</span>':''}
+        <button data-quick="${p.id}" class="absolute bottom-2.5 inset-x-2.5 h-9 bg-[#2D2A26] text-white rounded-full text-[13px] font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition md:block hidden">Quick add</button>
+      </div>
+      <div class="p-3.5 flex-1 flex flex-col">
+        <p class="text-[11px] uppercase tracking-widest text-[#7A9277]">GlowEnvy</p>
+        <h3 class="font-medium leading-snug mt-0.5 line-clamp-2 min-h-[40px] cursor-pointer" data-open="${p.id}">${p.name}</h3>
+        <div class="flex items-center gap-1 mt-1"><span class="text-[#C8A96A] text-[13px]">${'★'.repeat(Math.round(p.rating))}${'☆'.repeat(5-Math.round(p.rating))}</span><span class="text-[11px] text-[#6B625C]">(${p.reviews})</span></div>
+        <div class="mt-auto pt-2 flex items-center justify-between">
+          <span class="font-medium">${NGN(p.price)}</span>
+          <button data-add="${p.id}" class="md:hidden w-8 h-8 grid place-items-center rounded-full border border-black/10">+</button>
+        </div>
+      </div>
+    </article>
+  `).join('');
+  grid.onclick = e=>{
+    const wish = e.target.closest('[data-wish]'); if(wish){ toggleWish(+wish.dataset.wish); return; }
+    const quick = e.target.closest('[data-quick]'); if(quick){ addToCart(+quick.dataset.quick,1); return; }
+    const add = e.target.closest('[data-add]'); if(add){ addToCart(+add.dataset.add,1); return; }
+    const open = e.target.closest('[data-open]'); if(open){ openModal(+open.dataset.open); }
+  };
+  renderPagination();
+}
+
+function renderPagination(){
+  const pages = Math.ceil(state.filtered.length/state.perPage)||1;
+  const wrap = $('#pagination'); let html='';
+  const btn = (p,l= p, dis=false, act=false)=>`<button ${dis?'disabled':''} data-page="${p}" class="min-w-[36px] h-9 px-3 rounded-full border ${act?'bg-[#2D2A26] text-white border-[#2D2A26]':'border-black/10 hover:bg-black/5'} text-[13px] disabled:opacity-40">${l}</button>`;
+  html+= btn(state.page-1,'‹', state.page===1);
+  for(let i=1;i<=pages;i++){ if(i===1||i===pages||Math.abs(i-state.page)<=1){ html+= btn(i,i,false,i===state.page); } else if(Math.abs(i-state.page)===2){ html+='<span class="px-1 text-[#9A8F88]">…</span>'; } }
+  html+= btn(state.page+1,'›', state.page===pages);
+  wrap.innerHTML = html;
+  wrap.onclick = e=>{ const b=e.target.closest('[data-page]'); if(!b) return; state.page = +b.dataset.page; renderProducts(); window.scrollTo({top: $('#catalog').offsetTop-80, behavior:'smooth'}); };
+}
+
+function toggleWish(id){ if(state.wishlist.includes(id)) state.wishlist = state.wishlist.filter(x=>x!==id); else state.wishlist.push(id); save(); renderProducts(); }
+function addToCart(id,qty=1){ const item = state.cart.find(i=>i.id===id); if(item) item.qty+=qty; else state.cart.push({id, qty}); save(); toast('Added to bag'); renderCart(); }
+function renderCart(){ const box=$('#cart-items'); if(!state.cart.length){ box.innerHTML = `<div class="h-full grid place-items-center text-center p-10"><div><div class="w-16 h-16 mx-auto rounded-full bg-[#FDEBF0] grid place-items-center mb-3">🛍️</div><p class="font-medium">Your bag is empty</p><p class="text-[13px] text-[#6B625C] mt-1">Add some glow to get started</p></div></div>`; $('#cart-subtotal').textContent = NGN(0); return; }
+  box.innerHTML = state.cart.map(ci=>{ const p=state.products.find(x=>x.id===ci.id); return `<div class="flex gap-3 bg-white rounded-2xl p-3 border border-black/5"><img src="${p.image}" class="w-20 h-20 rounded-xl object-cover"><div class="flex-1 min-w-0"><p class="text-[13px] uppercase tracking-widest text-[#7A9277]">GlowEnvy</p><p class="font-medium leading-snug line-clamp-2">${p.name}</p><p class="text-[13px] text-[#6B625C]">${NGN(p.price)}</p><div class="mt-2 flex items-center gap-2"><button data-dec="${p.id}" class="w-7 h-7 rounded-full border">−</button><span class="w-6 text-center text-[14px]">${ci.qty}</span><button data-inc="${p.id}" class="w-7 h-7 rounded-full border">+</button><button data-rem="${p.id}" class="ml-auto text-[12px] text-[#B44] hover:underline">Remove</button></div></div></div>`; }).join('');
+  const subtotal = state.cart.reduce((s,ci)=>{ const p=state.products.find(x=>x.id===ci.id); return s + p.price*ci.qty; },0);
+  $('#cart-subtotal').textContent = NGN(subtotal);
+  box.onclick = e=>{ const dec=e.target.closest('[data-dec]'); const inc=e.target.closest('[data-inc]'); const rem=e.target.closest('[data-rem]'); if(dec){ updateQty(+dec.dataset.dec,-1);} if(inc){ updateQty(+inc.dataset.inc,1);} if(rem){ state.cart = state.cart.filter(x=>x.id!==+rem.dataset.rem); save(); renderCart(); } };
+}
+function updateQty(id,d){ const it=state.cart.find(x=>x.id===id); if(!it) return; it.qty+=d; if(it.qty<=0) state.cart = state.cart.filter(x=>x.id!==id); save(); renderCart(); }
+
+// Modal
+let modalQty=1, modalProduct=null;
+function openModal(id){ modalProduct = state.products.find(p=>p.id===id); modalQty=1; $('#modal-img').src = modalProduct.image; $('#modal-name').textContent = modalProduct.name; $('#modal-price').textContent = NGN(modalProduct.price); $('#modal-desc').textContent = modalProduct.description; $('#modal-stars').textContent = '★★★★★'.slice(0, Math.round(modalProduct.rating)); $('#modal-reviews').textContent = `(${modalProduct.reviews} reviews)`; $('#modal-ing').textContent = modalProduct.ingredients; $('#modal-use').textContent = modalProduct.howToUse; $('#modal-skin').innerHTML = modalProduct.skinTypes.map(s=>`<span class="px-2.5 py-1 bg-[#E8EDE7] text-[#2D2A26] rounded-full text-[11px] capitalize">${s}</span>`).join(''); $('#qty').textContent = '1'; $('#modal-thumbs').innerHTML = Array.from({length:4}).map((_,i)=>`<button class="aspect-square rounded-xl overflow-hidden border ${i===0?'border-[#7A9277]':'border-black/10'}"><img src="${modalProduct.image}" class="w-full h-full object-cover"></button>`).join(''); $('#product-modal').classList.remove('hidden'); document.body.style.overflow='hidden'; }
+function closeModal(){ $('#product-modal').classList.add('hidden'); document.body.style.overflow=''; }
+$('#close-modal').onclick = closeModal; $('#modal-backdrop').onclick = closeModal;
+$('#qty-minus').onclick = ()=>{ modalQty=Math.max(1,modalQty-1); $('#qty').textContent=modalQty; };
+$('#qty-plus').onclick = ()=>{ modalQty++; $('#qty').textContent=modalQty; };
+$('#modal-add').onclick = ()=>{ addToCart(modalProduct.id, modalQty); closeModal(); };
+
+// Cart drawer
+const openCart = ()=>{ $('#cart-drawer').classList.remove('translate-x-full'); $('#cart-backdrop').classList.remove('hidden'); renderCart(); };
+const closeCart = ()=>{ $('#cart-drawer').classList.add('translate-x-full'); $('#cart-backdrop').classList.add('hidden'); };
+$('#cart-btn').onclick = openCart; $('#close-cart').onclick = closeCart; $('#cart-backdrop').onclick = closeCart; $('#keep-shopping').onclick = closeCart;
+$('#checkout').onclick = ()=>{ toast('Demo checkout — connect Paystack'); };
+
+// Search
+['search','search-mobile'].forEach(id=>{ const el=$('#'+id); if(!el) return; el.oninput = e=>{ state.search = e.target.value; state.page=1; apply(); const other = id==='search'?'search-mobile':'search'; const o=$('#'+other); if(o && o.value!==e.target.value) o.value = e.target.value; }; });
+
+// Sort
+$('#sort').onchange = e=>{ state.sort=e.target.value; apply(); };
+
+// Shop dropdown
+const shopDrop = $('#shop-dropdown'); shopDrop.innerHTML = categories.map(c=>`<button data-cat="${c}" class="w-full text-left px-3 py-2 rounded-xl hover:bg-black/5 text-[14px]">${c}</button>`).join(''); $('#shop-toggle').onclick = ()=>shopDrop.classList.toggle('hidden'); shopDrop.onclick = e=>{ const b=e.target.closest('button'); if(!b) return; state.filters.categories = new Set([b.dataset.cat]); state.page=1; apply(); shopDrop.classList.add('hidden'); document.querySelector(`#category-pills [data-cat="${b.dataset.cat}"]`)?.click(); window.scrollTo({top: $('#catalog').offsetTop-80, behavior:'smooth'}); };
+
+// Mobile filters
+$('#open-filters').onclick = ()=>{ $('#mobile-filters').classList.remove('hidden'); $('#mf-content').innerHTML = $('#filters .sticky').innerHTML; };
+$('#mf-backdrop').onclick = ()=>$('#mobile-filters').classList.add('hidden');
+$('#mf-apply').onclick = ()=>$('#mobile-filters').classList.add('hidden');
+
+// Testimonials
+const testimonials = [
+  {name:'Amara O.', text:'My hyperpigmentation faded in 6 weeks. The Vitamin C serum is magic, no irritation.', role:'Combination skin', img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200'},
+  {name:'Tolu A.', text:'Finally a sunscreen that doesn’t leave white cast. I wear it daily under makeup.', role:'Oily skin', img:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200'},
+  {name:'Zainab M.', text:'Barrier cream saved my skin during Harmattan. No more flaking.', role:'Dry, sensitive', img:'https://images.unsplash.com/photo-1526510747491-58f928ec870f?w=200'},
+  {name:'Chioma E.', text:'The quiz recommended perfect routine. My acne is calmest it’s been in years.', role:'Acne-prone', img:'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200'}
+];
+function renderTestimonials(){ const track=$('#test-track'); track.innerHTML = testimonials.map(t=>`<div class="min-w-full md:min-w-[48%] lg:min-w-[32%] p-3"><div class="h-full bg-white rounded-[24px] border border-black/5 p-6 shadow-soft"><div class="flex items-center gap-3"><img src="${t.img}" class="w-11 h-11 rounded-full object-cover"><div><p class="font-medium leading-tight">${t.name}</p><p class="text-[12px] text-[#6B625C]">${t.role}</p></div></div><p class="mt-4 text-[15px] leading-relaxed">“${t.text}”</p><div class="mt-3 text-[#C8A96A]">★★★★★</div></div></div>`).join(''); }
+let testIndex=0; function slideTest(dir){ const track=$('#test-track'); const max = testimonials.length-1; testIndex = Math.max(0, Math.min(max, testIndex+dir)); const w = track.firstElementChild.offsetWidth + 24; track.style.transform = `translateX(-${testIndex * w}px)`; }
+$('#test-prev').onclick = ()=>slideTest(-1); $('#test-next').onclick = ()=>slideTest(1);
+
+// Quiz
+const quizData = [
+  {q:'What’s your skin type?', k:'skin', a:[['oily','Oily / shiny by noon'],['dry','Dry / tight'],['combination','Combination'],['sensitive','Sensitive / easily irritated']]},
+  {q:'Main concern right now?', k:'concern', a:[['acne','Acne & blemishes'],['dullness','Dullness / dark spots'],['dryness','Dryness / barrier'],['aging','Fine lines'],['sensitivity','Redness']]},
+  {q:'Routine preference?', k:'routine', a:[['minimal','Minimal (3 steps)'],['moderate','Moderate (4-5)'],['full','Full routine']]}
+];
+let quizStep=0, answers={};
+function renderQuiz(){ const wrap=$('#quiz-steps'); if(quizStep>=quizData.length){ const rec = recommend(); wrap.innerHTML = `<div class="animate-in"><h4 class="serif text-[22px]">Your GlowEnvy routine</h4><p class="text-[14px] text-[#6B625C] mt-1">Picked for ${answers.skin} skin, targeting ${answers.concern}.</p><div class="mt-4 space-y-3">${rec.map(p=>`<div class="flex gap-3 items-center p-3 border border-black/5 rounded-2xl"><img src="${p.image}" class="w-14 h-14 rounded-xl object-cover"><div class="flex-1 min-w-0"><p class="text-[12px] uppercase tracking-widest text-[#7A9277]">${p.category}</p><p class="font-medium leading-tight truncate">${p.name}</p></div><span class="text-[14px]">${NGN(p.price)}</span><button data-add-rec="${p.id}" class="ml-2 w-8 h-8 grid place-items-center rounded-full bg-[#2D2A26] text-white">+</button></div>`).join('')}</div><button id="quiz-restart" class="mt-5 text-[13px] underline">Retake quiz</button></div>`; wrap.querySelectorAll('[data-add-rec]').forEach(b=>b.onclick=()=>addToCart(+b.dataset.addRec,1)); $('#quiz-restart').onclick=()=>{ quizStep=0; answers={}; renderQuiz(); }; return; }
+  const step = quizData[quizStep]; wrap.innerHTML = `<p class="text-[13px] text-[#6B625C]">Step ${quizStep+1} of 3</p><h4 class="text-[18px] font-medium mt-1">${step.q}</h4><div class="mt-4 grid gap-2">${step.a.map(([v,l])=>`<button data-v="${v}" class="text-left px-4 h-12 rounded-2xl border border-black/10 hover:bg-[#FDEBF0]/50">${l}</button>`).join('')}</div>`; wrap.querySelectorAll('button[data-v]').forEach(b=>b.onclick=()=>{ answers[step.k]=b.dataset.v; quizStep++; renderQuiz(); }); }
+function recommend(){ const map={acne:'Salicylic Acid', dullness:'Vitamin C', dryness:'Hyaluronic Acid', aging:'Retinol', sensitivity:'Centella'}; const ing = map[answers.concern]||'Niacinamide'; const pick = (cat, filterFn)=> state.products.filter(p=>p.category===cat && p.skinTypes.includes(answers.skin)).find(filterFn) || state.products.find(p=>p.category===cat); const cleanser = pick('Cleansers', p=>p.name.includes('Gel')); const serum = pick('Serums', p=>p.name.includes(ing.split(' ')[0])); const moisturizer = pick('Moisturizers', ()=>true); const spf = pick('Sunscreens', ()=>true); const list=[cleanser, serum, moisturizer]; if(answers.routine!=='minimal') list.push(spf); return list.filter(Boolean).slice(0,4); }
+function openQuiz(){ $('#quiz-modal').classList.remove('hidden'); quizStep=0; answers={}; renderQuiz(); }
+function closeQuiz(){ $('#quiz-modal').classList.add('hidden'); }
+$('#quiz-hero').onclick = openQuiz; $('#quiz-header').onclick = openQuiz; $('#close-quiz').onclick = closeQuiz;
+
+// Newsletter
+$('#newsletter').onsubmit = e=>{ e.preventDefault(); const email = e.target.querySelector('input').value; localStorage.setItem('ge_news', email); $('#news-msg').classList.remove('hidden'); e.target.reset(); };
+
+// Init
+function init(){ renderPills(); renderFilterOptions(); renderTestimonials(); updateCounts(); apply(); }
+init();
+
+// Close dropdowns on outside click
+document.addEventListener('click', e=>{ if(!e.target.closest('#shop-toggle') && !e.target.closest('#shop-dropdown')) shopDrop.classList.add('hidden'); });
 </script>
 <script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
 </body>
