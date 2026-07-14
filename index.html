@@ -121,7 +121,7 @@
             </div>
             <div class="relative">
                 <div class="aspect-[4/3] md:aspect-[5/4] rounded-[32px] overflow-hidden shadow-soft bg-white">
-                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9b8cab?w=1200&q=80" alt="GlowEnvy products" class="w-full h-full object-cover">
+                    <img src="https://res.cloudinary.com/dvojnfcts/image/upload/v1783600557/glowenvy_hero_banner_fb8mnv.webp" alt="GlowEnvy products" class="w-full h-full object-cover">
                 </div>
                 <div class="absolute -bottom-6 -left-6 bg-white rounded-3xl p-4 shadow-soft border border-black/5 hidden md:flex items-center gap-3">
                     <div class="w-12 h-12 rounded-2xl bg-[#E8EDE7] grid place-items-center">
@@ -348,57 +348,35 @@
         </div>
     </div>
 
+<!-- Product catalog lives in products.js — edit that file to change what's for sale. -->
+<script src="products.js"></script>
 <script>
-const categories = ['Cleansers','Toners','Serums','Moisturizers','Sunscreens','Masks','Oils','Body Care'];
-const skinTypes = ['oily','dry','combination','sensitive'];
-const ingredients = ['Niacinamide','Hyaluronic Acid','Vitamin C','Retinol','Ceramide','Green Tea','Snail Mucin','Peptide','Salicylic Acid','AHA BHA','Rice Water','Centella','Bakuchiol','Squalane','Moringa','Hibiscus','Baobab','Kojic Acid','Tranexamic','Azelaic'];
-const nameMap = {
-  Cleansers:['Gel Cleanser','Foam Cleanser','Cream Cleanser','Oil Cleanser','Micellar Water'],
-  Toners:['Hydrating Toner','Exfoliating Toner','Essence Toner','Mist'],
-  Serums:['Glow Serum','Brightening Serum','Repair Serum','Hydration Boost','Acne Serum'],
-  Moisturizers:['Barrier Cream','Gel Moisturizer','Water Cream','Daily Lotion','Rich Cream'],
-  Sunscreens:['SPF 50 Fluid','Matte Sunscreen','Glow SPF','Mineral SPF'],
-  Masks:['Clay Mask','Sleeping Mask',' Sheet Mask','Peel Mask'],
-  Oils:['Face Oil','Botanical Oil','Cleansing Oil'],
-  'Body Care':['Body Lotion','Body Butter','Body Scrub','Hand Cream']
-};
-const images = [
-  'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800',
-  'https://images.unsplash.com/photo-1598440947619-2c35fc9b8cab?w=800',
-  'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800',
-  'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800',
-  'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800',
-  'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800',
-  'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800',
-  'https://images.unsplash.com/photo-1617897903246-719242758050?w=800'
-];
+const categories = CATEGORIES;
+const skinTypes = SKIN_TYPES;
 
-function generateProducts(){
-  const products = [];
-  for(let i=1;i<=200;i++){
-    const cat = categories[Math.floor(Math.random()*categories.length)];
-    const ing = ingredients[Math.floor(Math.random()*ingredients.length)];
-    const type = nameMap[cat][Math.floor(Math.random()*nameMap[cat].length)];
-    const name = `${ing} ${type}`;
-    const price = Math.floor(Math.random()*(28000-4500+1)/500)*500 + 4500;
-    const rating = (Math.random()*1.5 + 3.5).toFixed(1);
-    const reviews = Math.floor(Math.random()*1200)+20;
-    const skins = [...new Set(Array.from({length: Math.random()>0.6?2:1}, ()=>skinTypes[Math.floor(Math.random()*4)]))];
-    const img = images[(i+cat.length)%images.length] + `&q=80&auto=format&fit=crop`;
-    products.push({
-      id:i, name, category:cat, price, rating: +rating, reviews,
-      skinTypes: skins, image: img,
-      bestseller: i%7===0, isNew: i%11===0,
-      description: `A ${cat.toLowerCase()} powered by ${ing.toLowerCase()} to visibly improve texture and restore glow. Formulated for Nigerian humidity, lightweight and non-comedogenic.`,
-      ingredients: `${ing}, Aqua, Glycerin, Pentylene Glycol, Ceramide NP, Panthenol, Allantoin, Tocopherol, Moringa Oleifera Seed Oil, Hibiscus Sabdariffa Extract`,
-      howToUse: cat==='Sunscreens' ? 'Apply generously as last step AM. Reapply every 2 hours.' : cat==='Cleansers' ? 'Massage onto damp skin AM/PM, rinse.' : 'Apply 2-3 drops to clean skin AM/PM, follow with moisturizer.'
-    });
-  }
-  return products;
+// Fills in sensible defaults for any optional fields a product left out,
+// and assigns each product a stable position-based id.
+function normalizeProducts(raw){
+  const fallbackImg = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=80&auto=format&fit=crop';
+  return raw.map((p, i) => ({
+    id: p.id ?? (i+1),
+    name: p.name || 'Untitled product',
+    category: p.category || CATEGORIES[0],
+    price: Number(p.price) || 0,
+    rating: p.rating ?? 4.5,
+    reviews: p.reviews ?? 25,
+    skinTypes: (p.skinTypes && p.skinTypes.length) ? p.skinTypes : [...SKIN_TYPES],
+    image: p.image || fallbackImg,
+    bestseller: !!p.bestseller,
+    isNew: !!p.isNew,
+    description: p.description || '',
+    ingredients: p.ingredients || '',
+    howToUse: p.howToUse || 'Apply to clean skin AM/PM.'
+  }));
 }
 
 const state = {
-  products: generateProducts(),
+  products: normalizeProducts(PRODUCTS),
   filtered: [],
   page:1, perPage:12,
   cart: JSON.parse(localStorage.getItem('ge_cart')||'[]'),
