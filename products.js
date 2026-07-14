@@ -263,7 +263,7 @@ const PRODUCTS = [
     name: "Snow White Luxury Body Oil",
     category: "Oils",
     price: 13500,
-    image: "https://res.cloudinary.com/dvojnfcts/image/upload/v1784032455/snowwhite_tmpaaj.jpg",
+    image: "https://res.cloudinary.com/dvojnfcts/image/upload/v1784036032/Untitled_design_cio3ll.jpg",
     description: "Experience radiant, healthy-looking skin with our Snow White Luxury Body Oil. This highly concentrated body oil is expertly formulated to help brighten the appearance of dull skin, improve the look of uneven skin tone, and leave your skin with a smooth, luminous glow. Its lightweight, nourishing formula absorbs easily without feeling greasy, making it ideal for daily use.",
     ingredients: "* Sweet Almond Oil – Deeply moisturizes, softens, and nourishes the skin.\n* Kojic Acid – Helps improve the appearance of uneven skin tone and dark spots.\n* Glutathione – Supports a brighter, more radiant-looking complexion.",
     howToUse: "After cleansing, dispense a small amount into the palm of your hand and massage evenly over your body until fully absorbed. For best results, use morning and night and follow with sunscreen during the day to help protect your skin from UV exposure.",
